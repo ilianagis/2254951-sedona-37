@@ -23,24 +23,19 @@
             <a class="navigation-link" href="hotels.html">Гостиницы</a>
           </li>
         </ul>
-        <ul class="navigation-buttons">
-          <li class="navigation-button">
-            <button class="search-button" href="#">
-              <img src="img/search.png" alt="search" width="20px" height="20px">
-            </button>
+        <ul class="navigation">
+          <li class="navigation-link">
+            <a class="search" href="#">
+              <img src="img/search.svg" alt="search" width="20" height="20">
+            </a>
           </li>
-          <ul class="navigation-buttons">
-            <li class="navigation-button">
-              <button class="favourite-button" href="#">
-                <img src="img/heart.png" alt="add to favourite" width="20px" height="20px">
-              </button>
+            <li class="navigation-link">
+              <a class="favourite" href="#">
+                <img src="img/fav.svg" alt="add to favourite" width="20" height="20">
+              </a>
             </li>
-          </li>
-          <li class="navigation-item">
-            <a class="navigation-link" href="/catalog.html">ХОЧУ СЮДА!</a>
-            <script>
-              e.preventDefault();
-            </script>
+          <li class="navigation-link">
+            <a class="catalog" href="/catalog.html">ХОЧУ СЮДА!</a>
           </li>
           </ul>
           </nav>
@@ -48,7 +43,7 @@
 
     <main class="main-index">
       <h1 class="visually-hidden">Седона</h1>
-      <img class="welcome" src="images/index-background.jpg" alt="Welcome to the gorgeous Sedona because the grand canyon sucks!">
+      <img class="welcome" src="img/index-background.jpg" alt="Welcome to the gorgeous Sedona because the grand canyon sucks!">
 
       <h2 class="about-sedona">Седона — небольшой городок в Аризоне,
         <br>
@@ -114,42 +109,39 @@
       <section class="advantages">
         <ul class="advantages-list">
           <li class="advantages">
-            <img class="advantage-icon" src="img/house.svg" width="75px" height="72px">
+            <img class="advantage-icon" alt="hotel" src="img/house.svg" width="75" height="72">
             <h3 class="advantages-title">Жильё</h3>
             <p class="advantages-description">Рекомендуем пожить в настоящем мотеле,
               всё как в кино!</p>
           </li>
-          <ul class="advantages-list">
-            <li class="advantages">
-              <img class="advantage-icon" src="img/burger.svg" width="74px" height="70px">
+          <li class="advantages">
+              <img class="advantage-icon" alt="food" src="img/food.svg" width="74" height="70">
               <h3 class="advantages-title">Еда</h3>
               <p class="advantages-description">Всегда заказывайте
                 топовый фирменный бургер, вы не разочаруетесь!</p>
             </li>
-            <ul class="advantages-list">
-              <li class="advantages">
-                <img class="advantage-icon" src="img/gift.svg" width="64px" height="76px">
+          <li class="advantages">
+                <img class="advantage-icon" alt="souvenirs" src="img/gift.svg" width="64" height="76">
                 <h3 class="advantages-title">Сувениры</h3>
                 <p class="advantages-description">Не только китайского,
                   но и настоящего местного производства!</p>
               </li>
             </ul>
-      </section>
-      <section class="search-hotel"
+       </section>
+      <section class="search-hotel">
         <h3>Заинтересовались?</h3>
         <p class="search-hotel-description">Укажите предполагаемые даты поездки,
           <br>и мы покажем вам лучшие предложения
           гостиниц в Седоне</p>
-        <button class="search-hotel-button">ПОИС ГОСТИНИЦЫ В СЕДОНЕ</button>
+        <button class="search-hotel">ПОИС ГОСТИНИЦЫ В СЕДОНЕ</button>
       </section>
       <section class="subscribe">
-        <!-- не знаю что делать с фото снизу-->
-        <img src="img/Subscribe.png"> alt="Каньон"
+        <img src="img/background.svg" alt="subsribe">
         <h2 class="subscribe-title">Подпишитесь на рассылку</h2>
         <p class="subscribe-description">Только полезная информация и никакого спама, честное бойскаутское!</p>
         <form action="https://echo.htmlacademy.ru/" method="get">
           <input name="subscribe-mail" type="email" placeholder="Ваш e-mail">
-          <input type="submit" class="subscribe-mail-button" value="Подписаться"
+          <input type="submit" class="subscribe-mail-button" value="Подписаться">
         </form>
       </section>
     </main>
@@ -158,6 +150,7 @@
       <label>
         <input type='text' name='Ваш email'>
       </label>
+      </form>
 
       <footer class="page-footer">
         <h2 class="visually-hidden">
@@ -177,10 +170,10 @@
             </li>
           </ul>
           <h2 class="visually hidden">Phone number</h2>
-          <p>+7 (812) 812-12-12</p>
+          <a class="visually-hidden" href="tel:+7(812)812-12-12">
+            +7 (812) 812-12-12
+          </a>
         </section>
       </footer>
-
-  </body>
-
+      </body>
 </html>
