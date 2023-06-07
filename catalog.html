@@ -1,66 +1,178 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="utf-8">
-  <title>Гостиницы Седоны</title>
-  <link rel="stylesheet" href="styles/styles.css">
-</head>
-<body>
-    <header class="page-header">
-      <nav>
-        <a href="index.html" class="logo">
-          <img class="logo" src="img/icons/logo.svg" alt="logo of Sedona" width="140" height="70">
-        </a>
-        <ul class="navigation-list">
-          <li class="navigation-item">
-            <a class="navigation-link" href="main.html">Главная</a>
-          </li>
-          <li class="navigation-item">
-            <a class="navigation-link" href="about.html">О седоне</a>
-          </li>
-          <li class="navigation-item">
-            <a class="navigation-link" href="hotels.html">Гостиницы</a>
-          </li>
-        </ul>
-        <ul class="navigation-list navigation-user">
-          <li class="navigation-item">
-            <a class="navigation-link" href="#">
-              <span class="visually-hidden">Поиск
-              </span>
-            </a>
-          </li>
-          <li class="navigation-item">
-            <a class="navigation-link" href="#">
-              <span class="visually-hidden">Закладки
-              </span>
-            </a>
-          </li>
-          <li class="navigation-item">
-            <a class="navigation-link" href="popup">ХОЧУ СЮДА!</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+  <head>
+    <meta charset="utf-8" />
+    <title>Поиск гостиницы с фильтром</title>
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+  <body>
+    <div class="header-logo">
+      <a href="index.html">
+        <img
+          class="logo"
+          src="img/logo.svg"
+          alt="Логотип"
+          width="140"
+          height="70.05"
+        />
+      </a>
+    </div>
+    <div class="container">
+      <header class="header">
+        <nav class="navigation-item">
+          <ul class="navigation-list">
+            <li>
+              <a class="navigation-link" href="index.html">Главная</a>
+            </li>
+            <li>
+              <a class="navigation-link" href="about.html">О седоне</a>
+            </li>
+            <li>
+              <a class="navigation-link" href="hotels.html">Гостиницы</a>
+            </li>
+            <li>
+              <a class="navigation-search" href="#">
+                <img src="img/search.svg" alt="Поиск" width="20" height="20" />
+              </a>
+            </li>
+            <li>
+              <a class="navigation-favourite" href="#">
+                <img
+                  src="img/fav.svg"
+                  alt="Добавить в избранное"
+                  width="20"
+                  height="20"
+                />
+              </a>
+            </li>
+            <li>
+              <a class="catalog" href="/catalog.html">ХОЧУ СЮДА!</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+    <!--filtered search container-->
+    <section class="inner-header">
+      <h1 class="visually-hidden">Гостиницы Седоны</h1>
+      <img
+        class="filter-search-hotel"
+        src="img/filter-background.svg"
+        width="1200"
+        height="285"
+        alt="Поиск гостиницы"
+      />
+      <ul class="breadcrumbs-list">
+        <li class="breadcrumbs-item">
+          <a class="breadcrumbs-link home page" href="index.html">
+            <img src="bc-hp.svg" width="12" height="12" alt="Возвращение на главную страницу">
+          </a>
+        </li>
+        <li class="breadcrumbs-item">
+          <img src="bc-sign.svg" width="6.39" height="9.94" alt="Предыдущая/Данная страница">
+        </li>
+        <li class="breadcrumbs-item">
+          Гостиницы
+        </li>
+      </ul>
+      <form class="selection-form" action="#" method="get">
+        <div class="infrastructure-item">
+          <h2>
+            Инфраструктура:
+          </h2>
+          <input type="checkbox" name="pool" value="Бассейн" id="checkbox1" checked>
+          <label for="checkbox1">
+            Бассейн
+          </label>
+          <input type="checkbox" name="parking" value="Парковка" id="checkbox2">
+          <label for="checkbox2">
+            Парковка
+          </label>
+          <input type="checkbox" name="parking" value="WI-FI" id="checkbox3">
+          <label for="checkbox3">
+            WI-FI
+          </label>
+        </div>
+        <div class="property_type-item" id="main-div">
+          <div class="round">
+            <h2>
+              Тип Жилья:
+            </h2>
+          <input type="checkbox" name="hotel" value="Гостиница" id="checkbox4" checked>
+          <label for="checkbox4">
+            Гостиница
+          </label>
+        <input type="checkbox" name="motel" value="Мотель" id="checkbox5">
+        <label for="checkbox5">
+          Мотель
+        </label>
+        <input type="checkbox" name="apartments" value="Апартаменты" id="checkbox6">
+        <label for="checkbox6">
+          Апартаменты
+        </label>
+         </div>
+        </div>
+        <div class="cost_rub-filter">
+          <div class="cost_rub-title">Стоимость, Р:</div>
+          <div class="cost_range-control">
+            <label class="cost-from">
+              от
+              <input type="text" name="from" value="0" id="from-value">
+            </label>
+            <label class="cost-to">
+              до
+              <input type="text" name="to" value="9000" id="to-value">
+            </label>
+          </div>
+           <!-- line with price range-->
 
-     <section class="catalog-products">
-     <h2 class="visually-hidden">Список гостиниц с фильтром</h2>
-     </section>
+           <!-- Применить, сбросить buttons-->
+           <button class="submit-btn" type="submit">Применить</button>
+           <button class="reset-btn" type="reset">Сбросить</button>
+        </form>
+    </section>
 
+     <section class="search-hotels">
+      <h2 class="visually-hidden">Список гостиниц Седоны с фильтром</h2>
+      <span class="counter">Найдено гостиниц:</span>
+      <!--add photocards-->
+    </section>
+
+    <section class="subscribe">
+      <h2 class="subscribe-title">Подпишитесь на рассылку</h2>
+      <p class="subscribe-description">
+        Только полезная информация и никакого спама, честное бойскаутское!
+      </p>
+      <form action="https://echo.htmlacademy.ru/" method="get">
+        <input name="subscribe-mail" type="email" placeholder="Ваш e-mail" />
+        <input
+          type="submit"
+          class="subscribe-mail-button"
+          value="Подписаться"
+        />
+      </form>
+    </section>
     <footer class="page-footer">
-      <h2 class="visually-hidden">
-        Контактная информация
-      </h2>
+      <h2 class="visually-hidden">Контактная информация</h2>
       <section class="footer-social-link">
         <h2 class="visually-hidden">Ссылки на социальные сети</h2>
         <ul class="social-list">
           <li class="social-item">
-            <a class="visually-hidden" href="https://vk.com/htmlacademy">Вконтакте</a>
+            <a class="visually-hidden" href="https://vk.com/htmlacademy"
+              >Вконтакте</a
+            >
           </li>
           <li class="social-item">
-            <a class="visually-hidden" href="https://t.me/htmlacademy">Телеграм</a>
+            <a class="visually-hidden" href="https://t.me/htmlacademy"
+              >Телеграм</a
+            >
           </li>
           <li class="social-item">
-            <a class="visually-hidden" href="https://www.youtube.com/user/htmlacademyru">Ютуб</a>
+            <a
+              class="visually-hidden"
+              href="https://www.youtube.com/user/htmlacademyru"
+              >Ютуб</a
+            >
           </li>
         </ul>
         <h2 class="visually hidden">Phone number</h2>
@@ -69,5 +181,5 @@
         </a>
       </section>
     </footer>
-</body>
+  </body>
 </html>

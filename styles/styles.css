@@ -1,7 +1,83 @@
-body {
-  background-image: url("2254951-SEDONA-37/img/index-background.jpg");
+@font-face {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 400;
+  src: url(../fonts/ptsans-400.woff2) format:("woff2");
+  font-style: normal;
+  font-display: swap;
 }
 
-nav {
+@font-face {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+  src: url(../fonts/ptsans-700.woff2) format:("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+
+  font-family: 'PT Sans', sans-serif;
+  box-sizing: border-box;
+
+}
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 22px;
+  line-height: 26px;
+  background-color: #FFFFFF;
+  color: #333333;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* Header */
+
+.header {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+/* Navigation */
+
+.navigation-list {
+
+  list-style: none;
+
+}
+
+.navigation-link {
+
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+width: 339px;
+height: 64px;
+
+}
+
+.catalog {
+
+  width: 92px;
+  height: 20px;
+
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  background: #FFFFFF;
 
 }

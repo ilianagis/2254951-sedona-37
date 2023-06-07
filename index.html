@@ -7,72 +7,83 @@
   </head>
 
   <body>
-    <header class="page-header">
-      <nav>
-        <a href="index.html" class="logo">
-          <img
-            class="logo"
-            src="img/logo.svg"
-            alt="Логотип"
-            width="140"
-            height="70"
-          />
-        </a>
-        <ul class="navigation-list">
-          <li class="navigation-item">
-            <a class="navigation-link" href="main.html">Главная</a>
-          </li>
-          <li class="navigation-item">
-            <a class="navigation-link" href="about.html">О седоне</a>
-          </li>
-          <li class="navigation-item">
-            <a class="navigation-link" href="hotels.html">Гостиницы</a>
-          </li>
-        </ul>
-        <ul class="navigation">
-          <li class="navigation-link">
-            <a class="search" href="#">
-              <img src="img/search.svg" alt="search" width="20" height="20" />
-            </a>
-          </li>
-          <li class="navigation-link">
-            <a class="favourite" href="#">
-              <img
-                src="img/fav.svg"
-                alt="add to favourite"
-                width="20"
-                height="20"
-              />
-            </a>
-          </li>
-          <li class="navigation-link">
-            <a class="catalog" href="/catalog.html">ХОЧУ СЮДА!</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <div class="header-logo">
+      <a href="index.html">
+        <img
+           class="logo"
+           src="img/logo.svg"
+           alt="Логотип"
+           width="140"
+           height="70.05"
+        />
+      </a>
+    </div>
+    <div class="container">
+      <header class="header">
+        <nav class="navigation-item">
+          <ul class="navigation-list">
+            <li>
+              <a class="navigation-link" href="index.html">Главная</a>
+            </li>
+            <li>
+              <a class="navigation-link" href="about.html">О седоне</a>
+            </li>
+            <li>
+              <a class="navigation-link" href="hotels.html">Гостиницы</a>
+            </li>
+            <li>
+              <a class="navigation-search" href="#">
+                <img src="img/search.svg" alt="Поиск" width="20" height="20"/>
+              </a>
+            </li>
 
-    <main class="main-index">
+            <li>
+              <a class="navigation-favourite" href="#">
+                <img
+                  src="img/fav.svg"
+                  alt="Добавить в избранное"
+                  width="20"
+                  height="20"
+                />
+              </a>
+            </li>
+            <li>
+
+              <a class="catalog" href="/catalog.html">ХОЧУ СЮДА!</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+      <!--welcome container-->
+    <section class="welcome-block">
       <h1 class="visually-hidden">Седона</h1>
       <img
-        class="welcome"
+        class="welcome-background"
         src="img/index-background.jpg"
         width="1200"
         height="285"
         alt="Welcome background"
       />
-
-      <h2 class="about-sedona">
-        Седона — небольшой городок в Аризоне,
-        <br />
-        заслуживающий большего!
-      </h2>
-
-      <p class="advantages-description">
-        Рассмотрим причины, по которым Седона круче, чем Гранд-Каньон!
-      </p>
-
+      <img
+        class="welcome-text"
+        src="img/welcome-text.svg"
+        width="458"
+        height="352"
+        alt="welcome to gorgeous Sedona"
+      />
+        <!--section-->
       <section class="advantages">
+        <article role="main" id="content">
+          <h2 class="about-sedona">
+            СЕДОНА — НЕБОЛЬШОЙ ГОРОДОК В АРИЗОНЕ,
+            <br>
+            ЗАСЛУЖИВАЮЩИЙ БОЛЬШЕГО!
+          </h2>
+          <p class="advantages-description">
+            Рассмотрим причины, по которым Седона круче, чем Гранд-Каньон!
+          </p>
+          </article>
         <ul class="advantages-list">
           <li class="advantages">
             <h3 class="advantages-title">Настоящий<br />городок</h3>
@@ -181,12 +192,12 @@
         </ul>
       </section>
       <section class="search-hotel">
-        <h3>Заинтересовались?</h3>
+        <h2>Заинтересовались?</h2>
         <p class="search-hotel-description">
           Укажите предполагаемые даты поездки, <br />и мы покажем вам лучшие
           предложения гостиниц в Седоне
         </p>
-        <button class="search-hotel">ПОИС ГОСТИНИЦЫ В СЕДОНЕ</button>
+        <button class="search-hotel">ПОИСК ГОСТИНИЦЫ В СЕДОНЕ</button>
       </section>
       <section class="subscribe">
         <img src="img/background.svg" alt="subsribe" />
@@ -210,7 +221,7 @@
         <input type="text" name="Ваш email" />
       </label>
     </form>
-
+      <!--footer-->
     <footer class="page-footer">
       <h2 class="visually-hidden">Контактная информация</h2>
       <section class="footer-social-link">
