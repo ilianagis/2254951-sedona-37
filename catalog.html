@@ -48,7 +48,7 @@
 				</header>
 				<!--FILTER SEARCH CONTAINER-->
            <!--bredcrumbs-->
-				<section class="inner-header">
+				<div class="inner-header">
          <section class="breadcrumbs-wrapper">
 					<h1 class="breadcrumbs-title">Гостиницы Седоны</h1>
 					<ul class="breadcrumbs-list">
@@ -85,7 +85,6 @@
              </fieldset>
 						</div>
             <!--property type form-->
-            <form class="selection-form" action="#" method="get">
 						<div class="property-type-item">
              <fieldset class="property-type-fieldset">
                <legend class="property-type-subject">
@@ -130,7 +129,7 @@
               </div>
 						</div>
 					</form>
-				</section>
+        </div>
 			<!-- SEARCHING HOTELS CONTAINER-->
 				<div class="searching-hotels-container">
 					<div class="searching-filter-header">
@@ -165,7 +164,6 @@
 							<li class="hotel-card">
 								<img class="hotel-card-img" src="img/hotel-1.jpg" width="300" height="212" alt="Amara Resort &amp; Spa">
 								<h3 class="hotel-card-title">Amara Resort & Spa</h3>
-								</a>
 								<div class="hotel-card-type-price">
 									<span class="hotel-card-type">Гостиница</span>
 									<span class="hotel-card-price">От 4000 <span>₽</span></span>
@@ -182,7 +180,6 @@
 							<li class="hotel-card">
 								<img class="hotel-card-img" src="img/hotel-2.jpg" width="300" height="212" alt="Villas at Poco Diablo">
 								<h3 class="hotel-card-title">Villas at Poco Diablo</h3>
-								</a>
 								<div class="hotel-card-type-price">
 									<span class="hotel-card-type">Гостиница</span>
 									<span class="hotel-card-price">От 5000 <span>₽</span></span>
@@ -199,7 +196,6 @@
 							<li class="hotel-card">
 								<img class="hotel-card-img" src="img/hotel-3.jpg" width="300" height="212" alt="Desert Quail Inn">
 								<h3 class="hotel-card-title">Desert Quail Inn</h3>
-								</a>
 								<div class="hotel-card-type-price">
 									<span class="hotel-card-type">Гостиница</span>
 									<span class="hotel-card-price">От 2500 <span>₽</span></span>
@@ -216,7 +212,6 @@
 							<li class="hotel-card">
 								<img class="hotel-card-img" src="img/hotel-4.jpg" width="300" height="212" alt="GreenTree Inn">
 								<h3 class="hotel-card-title">GreenTree Inn</h3>
-								</a>
 								<div class="hotel-card-type-price">
 									<span class="hotel-card-type">Гостиница</span>
 									<span class="hotel-card-price">От 1500 <span>₽</span></span>
@@ -246,7 +241,7 @@
 								<a class="pagination-link" href="#">4</a>
 							</li>
 							<li class="pagination-item">
-								<a class="pagination-link" href="#">...</a>
+								<a class="pagination-link-more" href="#">...</a>
 							</li>
 							<li class="pagination-item">
 								<a class="pagination-link" href="#">10</a>
@@ -273,23 +268,29 @@
 							<h2 class="visually-hidden">Ссылки на социальные сети</h2>
 							<ul class="social-list">
 								<li class="social-item">
-                  <img class="social-item-icon" src="img/icon-vk.svg" width="24" height="14" alt="Наш ВКонтакте">
-                  <a class="visually-hidden" href="https://vk.com/htmlacademy">
+                  <a href="https://vk.com/htmlacademy">
+                    <img class="social-item-icon" src="img/icon-vk.svg" width="24" height="14" alt="Наш ВКонтакте">
+                  <span class="visually-hidden">
                     Вконтакте
-                  </a>
+                  </span>
+                 </a>
                 </li>
-								<li class="social-item">
-                  <img class="social-item-icon" src="img/icon-telegram.svg" width="18" height="16" alt="Наш телеграм">
-                  <a class="visually-hidden" href="https://t.me/htmlacademy">
+                <li class="social-item">
+                  <a href="https://t.me/htmlacademy">
+                    <img class="social-item-icon" src="img/icon-telegram.svg" width="18" height="16" alt="Наш телеграм">
+                  <span class="visually-hidden">
                     Телеграм
-                  </a>
+                  </span>
+                 </a>
                 </li>
-								<li class="social-item">
-									<img class="social-item-icon" src="img/icon-youtube.svg" width="22" height="17" alt="Наш ютуб">
-                  <a class="visually-hidden" href="https://www.youtube.com/user/htmlacademyru">
+                <li class="social-item">
+                  <a href="https://www.youtube.com/user/htmlacademyru">
+                    <img class="social-item-icon" src="img/icon-youtube.svg" width="22" height="17" alt="Наш ютуб">
+                  <span class="visually-hidden">
                     Ютуб
-                  </a>
-								</li>
+                  </span>
+                 </a>
+                </li>
 							</ul>
 							<h2 class="visually-hidden">Phone number</h2>
 							<a class="contact-number" href="tel:+7(812)812-12-12">
