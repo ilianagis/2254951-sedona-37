@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'PT Sans';
   font-weight: 400;
   src: url(../fonts/ptsans-400.woff2) format("woff2");
   font-style: normal;
@@ -7,7 +7,7 @@
 }
 
 @font-face {
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'PT Sans';
   font-weight: 700;
   src: url(../fonts/ptsans-700.woff2) format("woff2");
   font-style: normal;
@@ -65,25 +65,6 @@ body {
 
 }
 
-/* HERO */
-
-.hero {
-  background: url(../img/bg-divider.svg) bottom, url(../img/welcome-background.jpg) center;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  display: flex;
-  flex-direction: column;
-  height: 485px;
-}
-
-.welcome-text {
-  height: 352px;
-  width: 458px;
-  padding-left: 371px;
-  padding-top: 51px;
-  border-radius: 0;
-
-}
 /* NAVIGATION */
 
 .logo {
@@ -93,18 +74,14 @@ body {
 }
 
 .page-header {
-  padding: 0 70px;
   height: 64px;
-  align-content: center;
 }
 
 .navigation {
   display: flex;
   flex-wrap: wrap;
-  align-content: center;
-  width: 1060px;
-  margin: 0 auto;
-
+  padding: 0 70px;
+  height: inherit;
 }
 .navigation-list {
   display: flex;
@@ -114,7 +91,6 @@ body {
   list-style: none;
 }
 .navigation-user {
-  max-width: 250px;
   margin-left: auto;
   display: flex;
 }
@@ -123,6 +99,21 @@ body {
   padding: 0 16px;
 }
 
+.navigation-item-user {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+}
+
+.navigation-button-search,
+.navigation-button-favourite {
+  margin: 22px 12px;
+}
+
+.navigation-button-popup {
+  margin-left: 20px;
+}
 
 .navigation-link {
   display: block;
@@ -135,25 +126,27 @@ body {
   text-transform: capitalize;
 }
 
-.navigation-button {
-  display: flex;
-  align-items: center;
-  width: 268px;
-  height: 64px;
-  text-decoration: none;
-}
-
-.btn-search,
-.btn-like {
-  padding: 21px 12px;
+.btn-search {
+  background: url(../img/search.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+  padding: 1px 0px 0px 1px;
   cursor: pointer;
 }
 
-.btn-like {
-  margin-right: 20px;
+.btn-favourite {
+  background: url(../img/fav.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+  padding: 2px 1px 1px 1px;
+  cursor: pointer;
 }
 
-.btn-catalog {
+.popup-btn {
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
@@ -162,10 +155,29 @@ body {
   text-transform: uppercase;
   color: #ffffff;
   background-color: #756157;
-  padding: 0;
+  padding: 8px 34px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  white-space: nowrap;
+}
+
+/* HERO */
+
+.hero {
+  background: url(../img/bg-divider.svg) bottom, url(../img/welcome-background.jpg) center;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  display: flex;
+  flex-direction: column;
+  height: 485px;
+}
+
+.welcome-text {
+  padding-top: 51px;
+  align-self: center;
+  border-radius: 0;
+
 }
 
 
@@ -312,16 +324,31 @@ body {
   flex-direction: row-reverse;
 }
 
-/* RECTANGLE ADV */
+/* RECTANGLE ADV
 
-.rectangle-adv-wide {
+.advantages-rectangle-light {
+  width: 60px;
+  height: 2px;
   background: rgba(255, 255, 255, 0.30);
-  margin: auto;
 }
 
-.rectangle-adv {
+.advantages-rectangle {
+  width: 60px;
+  height: 2px;
   background: rgba(0, 0, 0, 0.30);
-  margin: auto;
+
+}
+*/
+
+.advantages-title::after {
+  display: block;
+  background: rgba(0, 0, 0, 0.30);
+  width: 60px;
+  height: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 /* COME TO SEDONA ADVANTAGES LIST 2 */
@@ -370,8 +397,6 @@ body {
 
 .subscribe {
   padding: 96px 258px 104px;
-  width: 684px;
-  height: 215px;
 }
 .subscribe-catalog {
   padding: 96px 258px 104px;
@@ -404,7 +429,7 @@ body {
   border: none;
   border-radius: 4px 0 0 4px;
   height: 50px;
-  width: 452px;
+  min-width: 452px;
   padding: 0 20px;
 }
 
@@ -413,9 +438,7 @@ body {
   font-weight: 700;
   line-height: 36px;
   text-transform: uppercase;
-  width: 232px;
-  height: 50px;
-  align-items: center;
+  padding: 8px 50px;
   color: #ffffff;
   background-color: #82b3d3;
   border: none;
@@ -456,6 +479,26 @@ body {
 
 .social-item {
   padding: 0 10px;
+}
+
+.social-link:hover path,
+.social-link:focus path {
+  fill: #68A2CA;
+}
+
+.social-link:active path {
+  fill: #68A2CA4D;
+}
+
+/* .contact-number:hover, */
+.html-academy:hover path,
+.html-academy:focus path {
+  fill: #756157;
+}
+
+/* .contact-number:active, */
+.html-academy:active path {
+  fill: #7561574D;
 }
 
 .contact-number {
@@ -507,7 +550,6 @@ body {
 
 .selection-form {
   display: flex;
-  align-items: flex-start;
 }
 
 /* INFRASTRUCTURE and PROPERTY TYPE */
@@ -540,6 +582,9 @@ body {
 }
 
 /* COST FILTER */
+.cost-filter-wrap {
+  display: flex;
+}
 
 .cost-rub-filter {
   display: flex;
@@ -637,8 +682,49 @@ body {
   grid-column: 2 span;
 }
 
-.hotel-card-about {
+.hotel-card-type-price {
+
+}
+
+.hotel-card-about,
+.hotel-card-fav {
   text-decoration: none;
+  font-size: 16px;
+  font-family: PT Sans;
+  font-weight: 700;
+  line-height: 20px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 1);
+}
+
+.hotel-card-about {
+  background: rgba(117, 97, 87, 1);
+  padding: 8px 25px;
+}
+.hotel-card-fav {
+  background: rgba(130, 179, 211, 1);
+  border: none;
+  padding: 8px 25px;
+}
+
+.hotel-card-about + .hotel-card-fav {
+  margin-left: 20px;
+}
+
+.hotel-card-star-rating {
+  display: flex;
+  align-items: center;
+}
+
+.rating {
+  border-radius: 4px;
+  background: #F2F2F2;
+  padding: 9px 22px 8px 23px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 20px;
+  white-space: nowrap;
 }
 
 /* PAGINATION */
