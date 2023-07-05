@@ -26,22 +26,23 @@
               <a class="navigation-link" href="about.html">О седоне</a>
             </li>
             <li class="navigation-item">
-              <a class="navigation-link" href="/catalog.html">Гостиницы</a>
+              <a class="navigation-link navigation-link-current" href="/catalog.html">Гостиницы</a>
             </li>
           </ul>
           <ul class="navigation-list navigation-user">
             <li class="navigation-item-user navigation-button-search">
-              <a class="navigation-link btn-search" href="#">
+              <a class="navigation-link-user btn-search" href="#">
                 <span class="visually-hidden">Поиск</span>
               </a>
             </li>
             <li class="navigation-item-user navigation-button-favourite">
-              <a class="navigation-link btn-favourite" href="#">
-                <span class="visually-hidden">Избранное</span>
+              <a class="navigation-link-user btn-favourite" href="#">
+               <span class="visually-hidden">Гостиниц в избранном</span>
+               <span class="navigation-user-fav-element">12</span>
               </a>
             </li>
             <li class="navigation-item-user navigation-button-popup">
-              <a class="navigation-link-btn popup-btn" href="index.html">Хочу сюда!</a>
+              <a class="navigation-link-btn js-modal" data-modal="#modal" href="#modal">Хочу сюда!</a>
             </li>
           </ul>
         </nav>
@@ -64,6 +65,7 @@
           </ul>
         </section>
         <!--infrastructure form-->
+        <div class="filter-wrapper">
         <form class="selection-form" action="#" method="get">
             <fieldset class="infrastructure-fieldset">
               <legend class="infrastructure-subject">
@@ -96,17 +98,16 @@
             </fieldset>
           </form>
           <!--COST FILTER-->
-          <div class="cost-filter-wrap">
-          <div class="cost-rub-filter">
+          <div class="cost-rub-filter-wrapper">
             <div class="cost-rub-title">Стоимость, <span>₽</span>:</div>
             <div class="cost-control">
               <label class="cost-from">
-                от
                 <input type="number" name="from" value="0" id="from-value">
+                от
               </label>
               <label class="cost-to">
-                до
                 <input type="number" name="to" value="9000" id="to-value">
+                до
               </label>
             </div>
             <!-- price range scale bar-->
@@ -123,7 +124,7 @@
               <button class="reset-btn" type="reset">Сбросить</button>
           </div>
         </div>
-      </div>
+        </div>
       <!-- SEARCHING HOTELS CONTAINER-->
       <div class="searching-hotels-container">
         <div class="searching-filter-header">
@@ -138,17 +139,36 @@
           </div>
           <!--type of view buttons-->
           <div class="view-buttons">
-            <button class="button button-grid">
+            <button class="view-button button-grid current">
               <span class="visually-hidden">Карточки</span>
-              <img src="img/btn-grid.svg" width="16" height="14" alt="Карточки">
+              <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 0H0V6H4V0Z" fill="black"/>
+                <path d="M16 0H12V6H16V0Z" fill="black"/>
+                <path d="M10 0H6V6H10V0Z" fill="black"/>
+                <path d="M4 8H0V14H4V8Z" fill="black"/>
+                <path d="M16 8H12V14H16V8Z" fill="black"/>
+                <path d="M10 8H6V14H10V8Z" fill="black"/>
+                </svg>
             </button>
-            <button class="button button-single">
+            <button class="view-button button-single">
               <span class="visually-hidden">Одинарные</span>
-              <img src="img/btn-single.svg" width="16" height="14" alt="Одинарные">
+              <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 12H0V14H16V12Z" fill="black"/>
+                <path d="M14 2V8H2V2H14ZM16 0H0V10H16V0Z" fill="black"/>
+                </svg>
             </button>
-            <button class="button button-list">
+            <button class="view-button button-list">
               <span class="visually-hidden">Список</span>
-              <img src="img/btn-list.svg" width="16" height="14" alt="Список">
+              <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 0H0V2H2V0Z" fill="black"/>
+                <path d="M16 0H4V2H16V0Z" fill="black"/>
+                <path d="M2 4H0V6H2V4Z" fill="black"/>
+                <path d="M16 4H4V6H16V4Z" fill="black"/>
+                <path d="M2 8H0V10H2V8Z" fill="black"/>
+                <path d="M16 8H4V10H16V8Z" fill="black"/>
+                <path d="M2 12H0V14H2V12Z" fill="black"/>
+                <path d="M16 12H4V14H16V12Z" fill="black"/>
+                </svg>
             </button>
           </div>
         </div>
@@ -180,7 +200,7 @@
               </div>
               <div class="hotel-card-about-fav">
                 <a class="hotel-card-about" href="#">ПОДРОБНЕЕ</a>
-                <button class="hotel-card-fav">В ИЗБРАННОЕ</button>
+                <button class="hotel-card-fav favourite">В ИЗБРАННОМ</button>
               </div>
               <div class="hotel-card-star-rating">
                 <img class="star-rating" src="img/rating-star4.svg" width="140" height="37" alt="Четыре звезды">
@@ -309,6 +329,17 @@
       </footer>
     </div>
   </main>
+
+  <div id="modal" class="modal-window">
+    <div class="modal-window__title">
+      <h3>Привет!</h3>
+      <a href="#" class="modal-close">Закрыть</a>
+    </div>
+  </div>
+  <div class="modal-window__backdrop hidden" id="modal-backdrop"></div>
+
+  <script src="js/scripts.js"></script>
+
 </body>
 
 </html>
