@@ -24,7 +24,7 @@
               <a class="navigation-link" href="index.html">Главная</a>
             </li>
             <li class="navigation-item">
-              <a class="navigation-link" href="about.html">О седоне</a>
+              <a class="navigation-link" href="../#about">О седоне</a>
             </li>
             <li class="navigation-item">
               <a class="navigation-link navigation-link-current" href="/catalog.html">Гостиницы</a>
@@ -55,31 +55,35 @@
           <h1 class="breadcrumbs-title">Гостиницы Седоны</h1>
           <ul class="breadcrumbs-list">
             <li class="breadcrumbs-item">
-              <a class="breadcrumbs-link home-page" href="index.html">
+              <a class="breadcrumbs-link" href="index.html">
                 <img src="img/breadcrumbs-homepage.svg" width="12" height="12" alt="Возвращение на главную страницу">
               </a>
             </li>
             <li class="breadcrumbs-item">
-              <img src="img/breadcrumbs-indicator.svg" width="6" height="10" alt="Предыдущая/Настоящая страница">
+              <a class="breadcrumbs-link" href="catalog.html">
+                Гостиницы
+              </a>
             </li>
-            <li class="breadcrumbs-item">Гостиницы</li>
           </ul>
         </section>
         <!--infrastructure form-->
-        <div class="filter-wrapper">
+        <section class="filter-wrapper">
         <form class="selection-form" action="#" method="get">
             <fieldset class="infrastructure-fieldset">
               <legend class="infrastructure-subject">
                 Инфраструктура:
               </legend>
-              <label>
-                <input class="infra-pool" type="checkbox" name="pool" value="Бассейн" checked> Бассейн
+              <label class="checkbox-container">
+                <input class="control-input" type="checkbox" name="pool" value="Бассейн" checked>
+                <span class="infrastructure-title">Бассейн</span>
               </label>
-              <label>
-                <input type="checkbox" name="parking" value="Парковка" checked> Парковка
+              <label class="checkbox-container">
+                <input class="control-input" type="checkbox" name="parking" value="Парковка" checked>
+                <span class="infrastructure-title">Парковка</span>
               </label>
-              <label>
-                <input type="checkbox" name="wi-fi" value="Вай-Фай"> WI-FI
+              <label class="checkbox-container">
+                <input class="control-input" type="checkbox" name="wi-fi" value="Вай-Фай">
+                <span class="infrastructure-title">Wi-Fi</span>
               </label>
             </fieldset>
           <!--property type form-->
@@ -87,14 +91,17 @@
               <legend class="property-type-subject">
                 Тип Жилья:
               </legend>
-              <label>
-                <input type="radio" name="house-type" value="Гостиница" checked> Гостиница
+              <label class="checkbox-container">
+                <input class="control-input" type="radio" name="house-type" value="Гостиница" checked>
+                <span class="property-type-title">Гостиница</span>
               </label>
-              <label>
-                <input type="radio" name="house-type" value="Мотель"> Мотель
+              <label class="checkbox-container">
+                <input class="control-input" type="radio" name="house-type" value="Мотель">
+                <span class="property-type-title">Мотель</span>
               </label>
-              <label>
-                <input type="radio" name="house-type" value="Апартаменты"> Апартаменты
+              <label class="checkbox-container">
+                <input class="control-input" type="radio" name="house-type" value="Апартаменты">
+                <span class="property-type-title">Апартаменты</span>
               </label>
             </fieldset>
           </form>
@@ -103,13 +110,13 @@
           <div class="cost-rub-filter-wrapper">
             <div class="cost-rub-title">Стоимость, <span>₽</span>:</div>
             <div class="cost-control">
-              <label class="cost-from">
-                <input type="number" name="from" value="0" id="from-value">
-                от
+              <label class="cost-filter-wrapper">
+                <input class="cost-control-input" type="number" name="from" value="0" id="from-value">
+                <span class="cost-from">от</span>
               </label>
-              <label class="cost-to">
-                <input type="number" name="to" value="9000" id="to-value">
-                до
+              <label class="cost-filter-wrapper">
+                <input class="cost-control-input" type="number" name="to" value="9000" id="to-value">
+                <span class="cost-to">до</span>
               </label>
             </div>
             <!-- price range scale bar-->
@@ -126,7 +133,7 @@
               <button class="reset-button" type="reset">Сбросить</button>
           </div>
         </div>
-      </div>
+      </section>
       </div>
       <!-- SEARCHING HOTELS CONTAINER-->
       <div class="searching-hotels-container">
@@ -313,11 +320,94 @@
       </footer>
     </div>
   </main>
-
+     <!-- MODAL WINDOW -->
   <div id="modal" class="modal-window">
-    <div class="modal-window__title">
-      <h3>Привет!</h3>
-      <a href="#" class="modal-close">Закрыть</a>
+    <div class="modal-window-container">
+     <div class="modal-window-header">
+      <h2>Поиск гостиницы в Седоне</h2>
+      <a href="#" class="modal-close">
+        <span class="visually-hidden">Закрыть</span>
+        <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.4905 4.78288L16.1982 3.49057L10.4905 9.19826L4.78279 3.49057L3.49048 4.78288L9.19817 10.4906L3.49048 16.1983L4.78279 17.4906L10.4905 11.7829L16.1982 17.4906L17.4905 16.1983L11.7828 10.4906L17.4905 4.78288Z" fill="black"/>
+        </svg>
+      </a>
+     </div>
+     <form class="modal-arrival" action="https:://echo.htmlacademy.ru/" method="post">
+      <label class="modal-arrival-date">
+        <h4 class="modal-h4">
+          Дата заезда:
+        </h4>
+        <input class="select-date" type="date" name="arrival-date" value="27 апреля 2020">
+      </label>
+      <span class="date-details">
+        Мы не можем отправить вас в прошлое.
+      </span>
+      <label class="modal-departure-date">
+        <h4 class="modal-h4">
+          Дата выезда:
+        </h4>
+        <input class="select-date" type="date" name="departure-date" value="1 сентября 2023">
+      </label>
+      <span class="date-details">
+        На эти даты есть свободные номера. Пока есть.
+      </span>
+      <!-- MODAL select people amount -->
+      <div class="modal-people-amount">
+        <label class="modal-adult">
+          <h4 class="modal-h4">
+            Взрослые:
+          </h4>
+          <div class="select-amount-btn">
+            <button class="button-minus">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 9V11H17V9H3Z" fill="#756157" fill-opacity="0.3"/>
+                </svg>
+            </button>
+            <input type="text" value="1" size="2" class="quantity" data-max-count="8">
+            <button class="button-plus">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z" fill="#756157" fill-opacity="0.3"/>
+              </svg>
+            </button>
+        </label>
+          </div>
+
+        <label class="modal-children">
+          <h4 class="modal-h4">
+            Дети:
+          </h4>
+          <span class="modal-children-tooltip">
+            <button class="tooltip-btn" type="button">
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="13" cy="13" r="13" fill="#83B3D3"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7H14V9H12V7ZM14 19H12V10H14V19Z" fill="white"/>
+              </svg>
+            </button>
+            <span class="tooltip-text" role="tooltip">
+              Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.
+            </span>
+          </span>
+          <div class="select-amount-btn">
+             <button class="button-minus">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 9V11H17V9H3Z" fill="#756157" fill-opacity="0.3"/>
+              </svg>
+             </button>
+             <input type="text" value="1" size="2" class="quantity" data-max-count="8">
+             <button class="button-plus">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z" fill="#756157" fill-opacity="0.3"/>
+              </svg>
+             </button>
+            </label>
+         </div>
+        <div class="modal-btn">
+          <button class="modal-search-btn" type="submit">
+            Найти
+          </button>
+        </div>
+      </div>
+     </form>
     </div>
   </div>
   <div class="modal-window__backdrop hidden" id="modal-backdrop"></div>

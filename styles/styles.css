@@ -17,6 +17,7 @@
 html {
   height: 100%;
   background-color: #F2F2F2;
+  scroll-behavior: smooth;
 }
 
 /* BODY */
@@ -403,7 +404,6 @@ body {
 }
 
 .advantages-item-wide-reversed {
-  display: flex;
   flex-direction: row-reverse;
 }
 
@@ -412,9 +412,26 @@ body {
   background: rgba(255, 255, 255, 0.30);
 }
 
-.advantages-item-photo1/*,
-.advantages-item-photo2*/ {
+.advantages-item-photo1 {
   position: absolute;
+}
+
+.advantages-photo2-wrap {
+  position: relative;
+  width: 800px;
+  overflow: hidden;
+}
+
+.advantages-item-photo2 {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  height: 100%;
+  /*
+  overflow: hidden;
+  width: auto;
+  */
 }
 
 /* COME TO SEDONA ADVANTAGES LIST 2 */
@@ -532,6 +549,7 @@ body {
 .footer-social-link {
   display: flex;
   width: 100%;
+  align-items: center;
 
 }
 .footer-social-item {
@@ -560,15 +578,23 @@ body {
   fill: #68A2CA4D;
 }
 
-/* .contact-number:hover, */
+/* html academy :hover, :focus, :active */
 .html-academy:hover path,
 .html-academy:focus path {
   fill: #756157;
 }
-
-/* .contact-number:active, */
 .html-academy:active path {
   fill: #7561574D;
+}
+
+/* contact number :hover, :focus, :active */
+
+.contact-number:hover,
+.contact-number:focus {
+  color: #756157;
+}
+.contact-number:active {
+  color: #7561574D;
 }
 
 .contact-number {
@@ -598,7 +624,7 @@ body {
 .breadcrumbs-wrapper {
   display: flex;
   flex-direction: column;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .breadcrumbs-title {
@@ -615,6 +641,32 @@ body {
   gap: 10px;
   padding: 0;
   margin: 0;
+}
+
+.breadcrumbs-item {
+  position: relative;
+}
+
+.breadcrumbs-link, .breadcrumbs-link:focus {
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.breadcrumbs-link:hover {
+  color: #FFFFFF99;
+}
+
+.breadcrumbs-link:active {
+  color: #FFFFFF4D;
+}
+
+.breadcrumbs-link::after {
+  position: absolute;
+  content: "";
+  background-image: url(../img/breadcrumbs-indicator.svg);
+  background-repeat: no-repeat;
 }
 
 /* FORM/SELECTION FORM*/
@@ -636,7 +688,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 32px;
+  gap: 16px;
   border: none;
   margin: 0;
   padding: 0;
@@ -647,7 +699,50 @@ body {
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
-  margin-bottom: 32px;
+  margin: 0 0 32px;
+}
+
+.infrastructure-title,
+.property-type-title {
+
+}
+
+.checkbox-container {
+  cursor: pointer;
+  font-weight: 400;
+  line-height: 23px;
+}
+
+.control-input[type="checkbox"] {
+  background-color: #ffffff;
+  border-radius: 4px;
+  margin: 0;
+  width: 20px;
+  height: 19px;
+  appearance: none;
+  cursor: pointer;
+}
+
+.control-input[type="checkbox"]:checked {
+  background-image: url("../img/tick.svg");
+  background-repeat: no-repeat;
+  background-position: center top 0;
+}
+
+.control-input[type="radio"] {
+  background-color: #ffffff;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  appearance: none;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.control-input[type="radio"]:checked {
+  background-image: url(../img/round-tick.svg);
+  background-repeat: no-repeat;
+  background-position: center top 0;
 }
 
 /* COST FILTER */
@@ -672,6 +767,22 @@ body {
 
 .cost-control {
   margin-bottom: 36px;
+}
+
+.cost-filter-wrapper {
+
+}
+
+.cost-control-input {
+  position: relative;
+}
+
+.cost-from,
+.cost-to {
+  position: absolute;
+  color: #000;
+  font-weight: 400;
+  line-height: 24px;
 }
 
 /* RANGE BAR */
@@ -739,11 +850,20 @@ body {
 }
 
 .searching-option {
-  width: 252px;
+  min-width: 290px;
   font-size: 18px;
   font-family: 'PT Sans';
   line-height: 21px;
   padding: 14px 20px;
+}
+
+.searching-option:hover,
+.searching-option:focus {
+  border-color: #68A2CA;
+}
+
+.searching-option:disabled {
+  border-color: #0000004D;
 }
 
 /* TYPE OF VIEW BUTTONS */
@@ -778,21 +898,39 @@ body {
 }
 
 .hotel-card {
-  display: grid;
-  grid-template-columns: repeat(2, 140px);
-  grid-template-rows: 212px 1fr;
-  border-radius: 4px;
-  border: 1px solid #E6E6E6;
+  display: flex;
+  flex-direction: column;
   padding: 20px;
-  gap: 16px 20px;
+  box-shadow: 0 0 0 1px #e6e6e6;
+  border-radius: 4px;
+}
+
+.hotel-card-img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  height: auto;
+}
+
+.hotel-card-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
 }
 
 .hotel-card-img,
 .hotel-card-title,
 .hotel-card-type-price,
+.hotel-card-about-fav {
+  margin-bottom: 16px;
+}
+
+.hotel-card-type-price,
 .hotel-card-about-fav,
 .hotel-card-star-rating {
-  grid-column: 2 span;
+  display: flex;
+  justify-content: space-between;
 }
 
 .hotel-card-about,
@@ -809,8 +947,13 @@ body {
 
 .hotel-card-about {
   background: rgba(117, 97, 87, 1);
-  padding: 8px 26px;
+  padding: 8px 25px;
 }
+
+.hotel-card-price {
+  text-align: right;
+}
+
 .hotel-card-fav {
   background: rgba(130, 179, 211, 1);
   border: none;
@@ -822,14 +965,9 @@ body {
   background: #7DB54F;
 }
 
-/*
-.hotel-card-about + .hotel-card-fav {
-  margin-left: 20px;
-*/
-
 .hotel-card-star-rating {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
 }
 
 .rating {
@@ -841,8 +979,37 @@ body {
   line-height: 20px;
   white-space: nowrap;
   text-transform: uppercase;
-  text-align: center;
 }
+
+/*
+
+.hotel-card {
+  display: grid;
+  grid-template-columns: repeat(2, 140px);
+  grid-template-rows: 212px 1fr;
+  border-radius: 4px;
+  border: 1px solid #E6E6E6;
+  padding: 20px;
+  gap: 16px 20px;
+}
+
+.hotel-card-img,
+.hotel-card-title,
+.hotel-card-type-price,
+.hotel-card-about-fav,
+.hotel-card-star-rating {
+  display: grid;
+  grid-column: 2 span;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: space-evenly;
+}
+*/
+
+/*
+.hotel-card-about + .hotel-card-fav {
+  margin-left: 20px;
+*/
 
 /* PAGINATION */
 
