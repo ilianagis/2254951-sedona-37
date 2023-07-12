@@ -435,6 +435,7 @@ body {
 .subscribe {
   padding: 96px 258px 104px;
 }
+
 .subscribe-catalog {
   padding: 96px 258px 104px;
   text-align: center;
@@ -473,7 +474,7 @@ body {
 }
 
 .subscribe-mail-button {
-  font-family: 'PT Sans';
+  font-family: 'PT Sans', sans-serif;
   font-size: 20px;
   font-weight: 700;
   line-height: 36px;
@@ -524,7 +525,7 @@ body {
 }
 
 .social-link:active path {
-  fill: #68A2CA4D;
+  fill: rgba(104, 162, 202, 0.3);
 }
 
 /* html academy :hover, :focus, :active */
@@ -533,7 +534,7 @@ body {
   fill: #756157;
 }
 .html-academy:active path {
-  fill: #7561574D;
+  fill: rgba(117, 97, 87, 0.3);
 }
 
 /* contact number :hover, :focus, :active */
@@ -543,7 +544,7 @@ body {
   color: #756157;
 }
 .contact-number:active {
-  color: #7561574D;
+  color: rgba(117, 97, 87, 0.3);
 }
 
 .contact-number {
@@ -588,7 +589,6 @@ body {
 .breadcrumbs-list {
   list-style: none;
   display: flex;
-  gap: 10px;
   padding: 0;
   margin: 0;
 }
@@ -606,11 +606,11 @@ body {
 
 .breadcrumbs-link:hover,
 .breadcrumbs-link:focus {
-  color: #FFFFFF99;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .breadcrumbs-link:active {
-  color: #FFFFFF4D;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .breadcrumbs-link::after {
@@ -623,6 +623,11 @@ body {
   width: 8px;
   height: 11px;
   padding: 6px 3px;
+  right: -19px;
+}
+
+.breadcrumbs-item:not(:first-child) {
+  margin-left: 20px;
 }
 
 .breadcrumbs-item:last-child .breadcrumbs-link:after {
@@ -637,8 +642,10 @@ body {
 
 .selection-form {
   display: flex;
+  /*
   gap: 70px;
   margin-right: auto;
+  */
 }
 
 /* INFRASTRUCTURE and PROPERTY TYPE */
@@ -662,9 +669,12 @@ body {
   margin: 0 0 32px;
 }
 
-.infrastructure-title,
-.property-type-title {
+.infrastructure-fieldset {
+  margin-right: 70px;
+}
 
+.property-type-fieldset {
+  margin-right: 150px;
 }
 
 .checkbox-container {
@@ -779,7 +789,7 @@ body {
   line-height: 24px;
   top: 13px;
   right: 20px;
-  color: #0000001d;
+  color: rgba(0, 0, 0, 0.11);
 }
 
 /* RANGE BAR */
@@ -843,6 +853,11 @@ body {
   color: #FFFFFF;
   border: none;
   border-radius: 4px;
+  cursor: pointer;
+}
+
+.reset-button:active {
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .submit-button {
@@ -904,7 +919,7 @@ body {
 }
 
 .searching-option:disabled {
-  border-color: #0000004D;
+  border-color: rgba(0, 0, 0, 0.3);
 }
 
 /* TYPE OF VIEW BUTTONS */
@@ -923,7 +938,7 @@ body {
 }
 
 .view-button.current {
-  border: 2px solid #000;
+  border: 2px solid #000000;
 }
 
 /* HOTEL CARDS */
@@ -988,7 +1003,7 @@ body {
 
 .hotel-card-about {
   background: #756157;
-  padding: 8px 25px;
+  padding: 8px 27px;
 }
 
 .hotel-card-about:hover,
@@ -1029,6 +1044,7 @@ body {
 
 .favourite.hotel-card-fav {
   background: #7DB54F;
+  padding: 8px 19px;
 }
 
 .favourite.hotel-card-fav:hover,
@@ -1185,7 +1201,6 @@ body {
   border-radius: 4px;
   background: #F2F2F2;
   width: 440px;
-  padding-left: 20px;
   box-sizing: border-box;
   line-height: 24px;
   opacity: 0.6;
@@ -1248,6 +1263,7 @@ body {
   font-weight: 700;
   line-height: 20px;
   padding: 0;
+  width: 31px;
 }
 
 .button-minus {
@@ -1261,6 +1277,7 @@ body {
 .button-minus,
 .button-plus {
   padding: 12px 10px;
+  cursor: pointer;
 }
 
 .date-details {
@@ -1280,5 +1297,57 @@ body {
 .modal-people-amount {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 42px;
+  margin-bottom: 48px;
+}
+
+.modal-adult {
+  display: flex;
+  gap: 46px;
+}
+
+.modal-children {
+  display: flex;
+  gap: 82px;
+  position: relative;
+}
+
+.modal-children-tooltip {
+  position: absolute;
+  top: 8px;
+  right: 37px;
+}
+
+.tooltip-text {
+  color: #ffffff;
+  font-family: PT Sans;
+  font-size: 16px;
+  line-height: 20px;
+  background: #333333;
+  padding: 18px 18px 22px 23px;
+  display: flex;
+  width: 256px;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-top: 15px;
+  text-align: initial;
+}
+
+
+.tooltip-text::before {
+  border-left: solid transparent 10px;
+  border-right: solid transparent 10px;
+  border-bottom: solid #333333 10px;
+  content: " ";
+  left: 50%;
+  margin-left: -10px;
+  position: absolute;
+  height: 9px;
+  top: 27px;
+}
+
+.field::after {
+  content: " ";
+  background-image: url(../img/modal-calendar-icon.svg);
 }

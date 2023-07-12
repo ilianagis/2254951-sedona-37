@@ -74,15 +74,15 @@
                 Инфраструктура:
               </legend>
               <label class="checkbox-container">
-                <input class="control-input" type="checkbox" name="pool" value="Бассейн" checked>
+                <input class="control-input" type="checkbox" name="pool" id="pool" value="Бассейн" checked>
                 <span class="infrastructure-title">Бассейн</span>
               </label>
               <label class="checkbox-container">
-                <input class="control-input" type="checkbox" name="parking" value="Парковка" checked>
+                <input class="control-input" type="checkbox" name="parking" id="parking" value="Парковка" checked>
                 <span class="infrastructure-title">Парковка</span>
               </label>
               <label class="checkbox-container">
-                <input class="control-input" type="checkbox" name="wi-fi" value="Вай-Фай">
+                <input class="control-input" type="checkbox" name="wi-fi" id="wi-fi" value="Вай-Фай">
                 <span class="infrastructure-title">Wi-Fi</span>
               </label>
             </fieldset>
@@ -92,19 +92,18 @@
                 Тип Жилья:
               </legend>
               <label class="checkbox-container">
-                <input class="control-input" type="radio" name="house-type" value="Гостиница" checked>
+                <input class="control-input" type="radio" name="house-type" id="house-type" value="Гостиница" checked>
                 <span class="property-type-title">Гостиница</span>
               </label>
               <label class="checkbox-container">
-                <input class="control-input" type="radio" name="house-type" value="Мотель">
+                <input class="control-input" type="radio" name="house-type" id="house-type" value="Мотель">
                 <span class="property-type-title">Мотель</span>
               </label>
               <label class="checkbox-container">
-                <input class="control-input" type="radio" name="house-type" value="Апартаменты">
+                <input class="control-input" type="radio" name="house-type" id="house-type" value="Апартаменты">
                 <span class="property-type-title">Апартаменты</span>
               </label>
             </fieldset>
-          </form>
           <!--COST FILTER-->
           <div class="cost-filter-container">
             <div class="cost-rub-filter-wrapper">
@@ -134,6 +133,7 @@
               <button class="submit-button" type="submit">Применить</button>
               <button class="reset-button" type="reset">Сбросить</button>
             </div>
+          </form>
           </div>
         </section>
       </div>
@@ -261,7 +261,8 @@
           честное бойскаутское!
         </p>
         <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
-          <input class="subscribe-mail-email" type="email" placeholder="Ваш e-mail">
+          <label class="visually-hidden" for="email">Ваш e-mail</label>
+          <input class="subscribe-mail-email" type="email" name="email" id="email" placeholder="Ваш e-mail" required>
           <input class="subscribe-mail-button" type="submit" value="Подписаться">
         </form>
       </section>
@@ -364,7 +365,7 @@
                 <path d="M3 9V11H17V9H3Z" fill="#756157" fill-opacity="0.3" />
               </svg>
             </button>
-            <input type="text" value="1" size="2" class="modal-input-quantity" data-max-count="8">
+            <input type="text" value="2" size="2" class="modal-input-quantity" data-max-count="8">
             <button class="button-plus">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z" fill="#756157" fill-opacity="0.3" />
@@ -377,30 +378,30 @@
         <h4 class="modal-h4">
               Дети:
             </h4>
-        <span class="modal-children-tooltip">
-              <button class="tooltip-btn" type="button">
-                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="13" cy="13" r="13" fill="#83B3D3"/>
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7H14V9H12V7ZM14 19H12V10H14V19Z" fill="white"/>
-                </svg>
-              </button>
-              <span class="tooltip-text visually-hidden" role="tooltip">
-                Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.
-              </span>
-        </span>
         <div class="select-amount-btn">
           <button class="button-minus">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M3 9V11H17V9H3Z" fill="#756157" fill-opacity="0.3" />
             </svg>
           </button>
-          <input type="text" value="1" size="2" class="modal-input-quantity" data-max-count="8">
+          <input type="text" value="2" size="2" class="modal-input-quantity" data-max-count="8">
           <button class="button-plus">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z" fill="#756157" fill-opacity="0.3" />
             </svg>
           </button>
         </div>
+        <span class="modal-children-tooltip">
+          <button class="tooltip-btn" type="button">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="13" cy="13" r="13" fill="#83B3D3"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7H14V9H12V7ZM14 19H12V10H14V19Z" fill="white"/>
+            </svg>
+            <span class="tooltip-text" role="tooltip">
+              Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.
+            </span>
+          </button>
+    </span>
       </label>
       </div>
     <div class="modal-btn">
