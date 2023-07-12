@@ -328,7 +328,7 @@
         <a href="#" class="modal-close">
           <span class="visually-hidden">Закрыть</span>
           <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.4905 4.78288L16.1982 3.49057L10.4905 9.19826L4.78279 3.49057L3.49048 4.78288L9.19817 10.4906L3.49048 16.1983L4.78279 17.4906L10.4905 11.7829L16.1982 17.4906L17.4905 16.1983L11.7828 10.4906L17.4905 4.78288Z" fill="black" />
+            <path d="M17.4905 4.78288L16.1982 3.49057L10.4905 9.19826L4.78279 3.49057L3.49048 4.78288L9.19817 10.4906L3.49048 16.1983L4.78279 17.4906L10.4905 11.7829L16.1982 17.4906L17.4905 16.1983L11.7828 10.4906L17.4905 4.78288Z" fill="black"/>
           </svg>
         </a>
       </div>
@@ -337,22 +337,22 @@
           <h4 class="modal-h4">
             Дата заезда:
           </h4>
-          <input class="field select-date" type="date" name="arrival-date" value="27 апреля 2020">
+          <input class="field modal-check-in" type="text" id="check-in" name="check-in" value="27 апреля 2020" required="">
         </label>
-        <span class="date-details">
+        <span class="date-details error">
           Мы не можем отправить вас в прошлое.
         </span>
         <label class="modal-departure-date">
           <h4 class="modal-h4">
             Дата выезда:
           </h4>
-          <input class="field select-date" type="date" name="departure-date" value="1 сентября 2023">
+          <input class="field modal-check-out" type="text" id="check-out" name="check-out" value="1 сентября 2023" required="">
         </label>
         <span class="date-details">
           На эти даты есть свободные номера. Пока есть.
         </span>
       </form>
-      <!-- MODAL select people amount -->
+      <!-- MODAL select amount -->
       <div class="modal-people-amount">
         <label class="modal-adult">
           <h4 class="modal-h4">
@@ -364,7 +364,7 @@
                 <path d="M3 9V11H17V9H3Z" fill="#756157" fill-opacity="0.3" />
               </svg>
             </button>
-            <input type="text" value="1" size="2" class="quantity" data-max-count="8">
+            <input type="text" value="1" size="2" class="modal-input-quantity" data-max-count="8">
             <button class="button-plus">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z" fill="#756157" fill-opacity="0.3" />
@@ -372,7 +372,6 @@
             </button>
           </div>
         </label>
-      </div>
 
       <label class="modal-children">
         <h4 class="modal-h4">
@@ -385,7 +384,7 @@
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7H14V9H12V7ZM14 19H12V10H14V19Z" fill="white"/>
                 </svg>
               </button>
-              <span class="tooltip-text" role="tooltip">
+              <span class="tooltip-text visually-hidden" role="tooltip">
                 Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.
               </span>
         </span>
@@ -395,7 +394,7 @@
               <path d="M3 9V11H17V9H3Z" fill="#756157" fill-opacity="0.3" />
             </svg>
           </button>
-          <input type="text" value="1" size="2" class="quantity" data-max-count="8">
+          <input type="text" value="1" size="2" class="modal-input-quantity" data-max-count="8">
           <button class="button-plus">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z" fill="#756157" fill-opacity="0.3" />
@@ -403,12 +402,13 @@
           </button>
         </div>
       </label>
-    </div>
+      </div>
     <div class="modal-btn">
       <button class="modal-search-btn" type="submit">
         Найти
       </button>
     </div>
+  </div>
   </div>
   <div class="modal-window__backdrop hidden" id="modal-backdrop"></div>
 

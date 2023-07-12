@@ -94,6 +94,7 @@ body {
 .navigation-user {
   margin-left: auto;
   display: flex;
+  align-items: start;
 }
 
 .navigation-item {
@@ -109,11 +110,11 @@ body {
 
 .navigation-button-search,
 .navigation-button-favourite {
-  margin: 22px 12px;
+  margin: 21px 11px;
 }
 
 .navigation-button-popup {
-  margin-left: 20px;
+  margin: 13px 0 0 20px;
 }
 
 .navigation-link {
@@ -184,8 +185,8 @@ body {
   line-height: 10px;
   text-align: center;
   padding: 5px 4px;
-  top: 15px;
-  margin-left: 10px;
+  top: 11px;
+  margin-left: 8px;
 }
 
 /* HERO */
@@ -384,10 +385,6 @@ body {
   transform: translate(-50%, -50%);
   top: 50%;
   height: 100%;
-  /*
-  overflow: hidden;
-  width: auto;
-  */
 }
 
 /* COME TO SEDONA ADVANTAGES LIST 2 */
@@ -739,16 +736,23 @@ body {
 
 .cost-filter-wrapper {
   color: #000000;
+  position: relative;
 }
 
 .cost-input {
+  display: inline;
   position: relative;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 18px;
+  border: 2px solid #f2f2f2;
+  background-color: #f2f2f2;
   width: 143px;
-  padding: 12px 20px;
-  font: inherit;
-  text-align: left;
-  background-color: #F2F2F2;
-  border: none;
+  color: #000000;
+  outline: none;
+  outline-offset: 0;
+  padding: 11px 20px;
 }
 
 .cost-input::-webkit-outer-spin-button,
@@ -768,19 +772,14 @@ body {
 .cost-from,
 .cost-to {
   position: absolute;
-  color: rgba(0, 0, 0, 1);
+  box-sizing: border-box;
+  font-family: inherit;
   font-weight: 400;
+  font-size: 18px;
   line-height: 24px;
-}
-
-.cost-from {
-  left: 52%;
-  top: 34%;
-}
-
-.cost-to {
-  top: 34%;
-  left: 58%;
+  top: 13px;
+  right: 20px;
+  color: #0000001d;
 }
 
 /* RANGE BAR */
@@ -885,13 +884,18 @@ body {
 }
 
 .searching-option {
-  min-width: 290px;
-  font-size: 18px;
-  font-family: 'PT Sans';
-  line-height: 21px;
-  padding: 14px 20px;
+  background-image: url(../img/select-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center right 14px;
+  padding: 14px 35px 14px 20px;
+  width: 292px;
+  font: inherit;
   color: #333333;
-  font-weight: 400;
+  background-color: #ffffff;
+  border: 2px solid #e5e5e5;
+  border-radius: 4px;
+  appearance: none;
+  cursor: pointer;
 }
 
 .searching-option:hover,
@@ -1146,12 +1150,8 @@ body {
   margin: auto;
 }
 
-.modal-window-header {
-  display: flex;
-}
-
 .modal-window-title {
-  margin: 0;
+  margin: 0 0 64px 0;
   color: #000000;
   font-size: 30px;
   line-height: 36px;
@@ -1160,12 +1160,18 @@ body {
 
 .modal-close {
   position: absolute;
-  padding: 0;
-  top: 0;
-  right: 0;
+  top: 66px;
+  right: 51px;
   width: 21px;
   height: 21px;
-  margin: 16px 15px 15px 16px;
+  padding: 16px 15px 15px 16px;
+  border-radius: 50%;
+  background-color: #F2F2F2;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  background-color: #E6E6E6;
 }
 
 .select-amount-btn {
@@ -1173,13 +1179,17 @@ body {
 }
 
 .field {
-  margin: 0;
-  padding: 12px 20px;
   font: inherit;
   font-weight: 700;
   border: none;
   border-radius: 4px;
   background: #F2F2F2;
+  width: 440px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  line-height: 24px;
+  opacity: 0.6;
+  padding: 12px 20px;
 }
 
 .modal-arrival-departure label {
@@ -1188,4 +1198,87 @@ body {
 
 .field:focus {
   border: #83B3D3;
+}
+
+.modal-h4 {
+  margin: 12px auto 12px 0;
+  color: #000000;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: capitalize;
+}
+
+.modal-btn {
+  text-align: center;
+}
+
+.modal-search-btn {
+  color: #ffffff;
+  text-align: center;
+  font-family: PT Sans;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+  background: #83B3D3;
+  border: none;
+  padding: 18px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 577px;
+}
+
+.modal-input-quantity,
+.button-minus,
+.button-plus{
+  border: none;
+  background: #F2F2F2;
+}
+
+.tooltip-btn {
+  background: none;
+  border: none;
+}
+
+.modal-input-quantity {
+  color: #000000;
+  text-align: center;
+  font-family: PT Sans;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+  padding: 0;
+}
+
+.button-minus {
+  border-radius: 4px 0 0 4px;
+}
+
+.button-plus {
+  border-radius: 0 4px 4px 0;
+}
+
+.button-minus,
+.button-plus {
+  padding: 12px 10px;
+}
+
+.date-details {
+  margin: 4px 0 23px 157px;
+  font-size: 16px;
+  color: #000000;
+}
+
+.error {
+  color: #ff5757;
+}
+
+.modal-arrival-departure {
+  display: contents;
+}
+
+.modal-people-amount {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 42px;
 }
