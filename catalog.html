@@ -8,13 +8,12 @@
   <title>HTML Academy: Седона</title>
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="icon" href="img/favicon.png">
+  <link rel="icon" href="favicon.ico">
 </head>
 
 <body>
   <!--HEADER/PAGE CONTAINER-->
-  <main class="main-container main-index">
-    <div class="page-container">
-      <header class="page-header">
+      <header class="page-header" data-test="header">
         <nav class="navigation">
           <a href="index.html">
             <img class="logo" src="img/logo.svg" alt="Логотип" width="140" height="70">
@@ -50,7 +49,8 @@
       </header>
       <!--FILTER SEARCH CONTAINER-->
       <!--bredcrumbs-->
-      <div class="inner-header">
+      <main class="main-container main-index" data-test="main">
+      <div class="inner-header" data-test="filter">
         <section class="breadcrumbs-wrapper">
           <h1 class="breadcrumbs-title">Гостиницы Седоны</h1>
           <ul class="breadcrumbs-list">
@@ -68,7 +68,7 @@
         </section>
         <!--infrastructure form-->
         <section class="filter-wrapper">
-          <form class="selection-form" action="#" method="get">
+          <form class="selection-form" action="https://echo.htmlacademy.ru/" method="get">
             <fieldset class="infrastructure-fieldset">
               <legend class="infrastructure-subject">
                 Инфраструктура:
@@ -111,22 +111,20 @@
               <div class="cost-control">
                 <label class="cost-filter-wrapper">
                   <input class="cost-input left" type="number" name="min-price" value="0" id="from-value">
-                  <span class="cost-from">от</span>
+                  <span>от</span>
                 </label>
                 <label class="cost-filter-wrapper">
                   <input class="cost-input right" type="number" name="max-price" value="9000" id="to-value">
-                  <span class="cost-to">до</span>
+                  <span>до</span>
                 </label>
               </div>
               <!-- price range scale bar-->
-              <div class="range">
-                <div class="range-scale">
+              <div class="range-scale">
                   <div class="range-bar">
                    <button type="button" class="range-toggle toggle-min"></button>
                    <button type="button" class="range-toggle toggle-max"></button>
                   </div>
                 </div>
-              </div>
             </div>
             <!-- Применить, сбросить buttons-->
             <div class="sub-res-button">
@@ -138,7 +136,7 @@
         </section>
       </div>
       <!-- SEARCHING HOTELS CONTAINER-->
-      <div class="searching-hotels-container">
+      <div class="searching-hotels-container" data-test="catalog">
         <div class="searching-filter-header">
           <h2 class="searching-result-title">Найдено гостиниц: 38</h2>
           <div class="filter-select-type">
@@ -151,23 +149,25 @@
           </div>
           <!--type of view buttons-->
           <div class="view-buttons">
-            <button class="view-button button-grid current">
+            <button type="button" class="view-button button-grid current">
               <span class="visually-hidden">Карточки</span>
               <img src="img/btn-grid.svg" width="16" height="14" alt="Карточки" </button>
-              <button class="view-button button-single">
-                <span class="visually-hidden">Одинарные</span>
-                <img src="img/btn-single.svg" width="16" height="14" alt="Одинарные" </button>
-                <button class="view-button button-list">
-                  <span class="visually-hidden">Список</span>
-                  <img src="img/btn-list.svg" width="16" height="14" alt="Список" </button>
+            <button type="button" class="view-button button-single">
+              <span class="visually-hidden">Одинарные</span>
+              <img src="img/btn-single.svg" width="16" height="14" alt="Одинарные" </button>
+            <button type="button" class="view-button button-list">
+              <span class="visually-hidden">Список</span>
+              <img src="img/btn-list.svg" width="16" height="14" alt="Список" </button>
           </div>
         </div>
         <!-- HOTEL CARDS -->
         <section class="hotel-cards">
           <ul class="hotel-list">
             <li class="hotel-card">
+              <a class="hotel-card-link" href="/catalog.html">
               <img class="hotel-card-img" src="img/hotel-1.jpg" width="300" height="212" alt="Amara Resort &amp; Spa">
               <h3 class="hotel-card-title">Amara Resort & Spa</h3>
+              </a>
               <div class="hotel-card-type-price">
                 <span class="hotel-card-type">Гостиница</span>
                 <span class="hotel-card-price">От 4000 <span>₽</span></span>
@@ -182,8 +182,10 @@
               </div>
             </li>
             <li class="hotel-card">
+              <a class="hotel-card-link" href="/catalog.html">
               <img class="hotel-card-img" src="img/hotel-2.jpg" width="300" height="212" alt="Villas at Poco Diablo">
               <h3 class="hotel-card-title">Villas at Poco Diablo</h3>
+              </a>
               <div class="hotel-card-type-price">
                 <span class="hotel-card-type">Гостиница</span>
                 <span class="hotel-card-price">От 5000 <span>₽</span></span>
@@ -198,8 +200,10 @@
               </div>
             </li>
             <li class="hotel-card">
+              <a class="hotel-card-link" href="/catalog.html">
               <img class="hotel-card-img" src="img/hotel-3.jpg" width="300" height="212" alt="Desert Quail Inn">
               <h3 class="hotel-card-title">Desert Quail Inn</h3>
+              </a>
               <div class="hotel-card-type-price">
                 <span class="hotel-card-type">Гостиница</span>
                 <span class="hotel-card-price">От 2500 <span>₽</span></span>
@@ -214,8 +218,10 @@
               </div>
             </li>
             <li class="hotel-card">
+              <a class="hotel-card-link" href="/catalog.html">
               <img class="hotel-card-img" src="img/hotel-4.jpg" width="300" height="212" alt="GreenTree Inn">
               <h3 class="hotel-card-title">GreenTree Inn</h3>
+              </a>
               <div class="hotel-card-type-price">
                 <span class="hotel-card-type">Гостиница</span>
                 <span class="hotel-card-price">От 1500 <span>₽</span></span>
@@ -254,7 +260,7 @@
         </section>
       </div>
       <!--SUBSCRIBE-->
-      <section class="subscribe-catalog subscribe-theme-catalog">
+      <section class="subscribe-catalog subscribe-theme-catalog" data-test="subscribe">
         <h2 class="subscribe-title-catalog">Подпишитесь на рассылку</h2>
         <p class="subscribe-description-catalog">
           Только полезная информация и никакого спама,<br>
@@ -266,8 +272,9 @@
           <input class="subscribe-mail-button" type="submit" value="Подписаться">
         </form>
       </section>
+      </main>
       <!--FOOTER-->
-      <footer class="footer">
+      <footer class="footer" data-test="footer">
         <div class="footer-container">
           <h2 class="visually-hidden">Контактная информация</h2>
           <div class="footer-social-link">
@@ -319,8 +326,6 @@
           </div>
         </div>
       </footer>
-    </div>
-  </main>
   <!-- MODAL WINDOW -->
   <div id="modal" class="modal-window">
     <div class="modal-window-container">
@@ -328,46 +333,45 @@
         <h2 class="modal-window-title">Поиск гостиницы в Седоне</h2>
         <a href="#" class="modal-close">
           <span class="visually-hidden">Закрыть</span>
-          <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="modal-close-button" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.4905 4.78288L16.1982 3.49057L10.4905 9.19826L4.78279 3.49057L3.49048 4.78288L9.19817 10.4906L3.49048 16.1983L4.78279 17.4906L10.4905 11.7829L16.1982 17.4906L17.4905 16.1983L11.7828 10.4906L17.4905 4.78288Z" fill="black"/>
           </svg>
         </a>
       </div>
-      <form class="modal-arrival-departure" action="https://echo.htmlacademy.ru/" method="post">
-        <label class="modal-arrival-date">
-          <h4 class="modal-h4">
+      <form class="modal-date-form" action="https://echo.htmlacademy.ru/" method="post">
+        <label class="modal-label-date">
+          <span class="modal-h4">
             Дата заезда:
-          </h4>
-          <input class="field modal-check-in" type="text" id="check-in" name="check-in" value="27 апреля 2020" required="">
+          </span>
+          <input class="field" type="text" placeholder="Укажите дату" id="check-in" name="check-in" value="27 апреля 2020" required="">
         </label>
         <span class="date-details error">
           Мы не можем отправить вас в прошлое.
         </span>
-        <label class="modal-departure-date">
-          <h4 class="modal-h4">
+        <label class="modal-label-date">
+          <span class="modal-h4">
             Дата выезда:
-          </h4>
-          <input class="field modal-check-out" type="text" id="check-out" name="check-out" value="1 сентября 2023" required="">
+          </span>
+          <input class="field" type="text" placeholder="Укажите дату" id="check-out" name="check-out" value="1 сентября 2023" required="">
         </label>
         <span class="date-details">
           На эти даты есть свободные номера. Пока есть.
         </span>
-      </form>
       <!-- MODAL select amount -->
       <div class="modal-people-amount">
         <label class="modal-adult">
-          <h4 class="modal-h4">
+          <span class="modal-h4">
               Взрослые:
-            </h4>
+          </span>
           <div class="select-amount-btn">
-            <button class="button-minus">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <button class="button-minus" id="minus-btn" type="button">
+              <svg class="minus-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M3 9V11H17V9H3Z" fill="#756157" fill-opacity="0.3" />
               </svg>
             </button>
             <input type="text" value="2" size="2" class="modal-input-quantity" data-max-count="8">
-            <button class="button-plus">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <button class="button-plus" id="plus-btn" type="button">
+              <svg class="plus-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z" fill="#756157" fill-opacity="0.3" />
               </svg>
             </button>
@@ -375,18 +379,18 @@
         </label>
 
       <label class="modal-children">
-        <h4 class="modal-h4">
+        <span class="modal-h4">
               Дети:
-            </h4>
+        </span>
         <div class="select-amount-btn">
-          <button class="button-minus">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <button class="button-minus" id="minus-btn" type="button">
+            <svg class="minus-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M3 9V11H17V9H3Z" fill="#756157" fill-opacity="0.3" />
             </svg>
           </button>
           <input type="text" value="2" size="2" class="modal-input-quantity" data-max-count="8">
-          <button class="button-plus">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <button class="button-plus" id="plus-btn" type="button">
+            <svg class="plus-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z" fill="#756157" fill-opacity="0.3" />
             </svg>
           </button>
@@ -397,10 +401,10 @@
               <circle cx="13" cy="13" r="13" fill="#83B3D3"/>
               <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7H14V9H12V7ZM14 19H12V10H14V19Z" fill="white"/>
             </svg>
+          </button>
             <span class="tooltip-text" role="tooltip">
               Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.
             </span>
-          </button>
     </span>
       </label>
       </div>
@@ -409,6 +413,7 @@
         Найти
       </button>
     </div>
+  </form>
   </div>
   </div>
   <div class="modal-window__backdrop hidden" id="modal-backdrop"></div>

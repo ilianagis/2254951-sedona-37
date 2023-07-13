@@ -8,13 +8,12 @@
   <title>HTML Academy: Седона</title>
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="icon" href="img/favicon.png">
+  <link rel="icon" href="favicon.ico">
 </head>
 
 <body>
   <!--HEADER/PAGE CONTAINER-->
-  <main class="main-container main-index">
-    <div class="page-container">
-      <header class="page-header">
+      <header class="page-header" data-test="header">
         <nav class="navigation">
           <a href="index.html">
             <img class="logo" src="img/logo.svg" alt="Логотип" width="140" height="70">
@@ -49,12 +48,13 @@
         </nav>
       </header>
       <!--HERO-->
-      <section class="hero">
+      <main class="main-container main-index" data-test="main">
+      <section class="hero" data-test="hero">
         <h1 class="visually-hidden">Седона</h1>
         <img class="welcome-text" src="img/welcome-text.svg" width="458" height="352" alt="welcome to the gorgeous Sedona">
       </section>
       <!--ADVANTAGES-->
-      <section class="advantages" id="about">
+      <section class="advantages" id="about" data-test="advantages">
         <div class="about-sedona">
           <h2 class="about-sedona-title">Седона — небольшой городок в Аризоне,<br>
           заслуживающий большего!</h2>
@@ -68,7 +68,7 @@
               городок</h3>
               <p class="advantages-description">Седона — не аттракцион для туристов, там течёт своя жизнь</p>
             </div>
-            <div>
+            <div class="advantages-photo-wrap">
               <img class="advantages-item-photo1" src="img/adv-photo1.jpg" width="800" height="385" alt="Sedona city">
             </div>
           </li>
@@ -99,7 +99,7 @@
               мост дьявола</h3>
               <p class="advantages-description">Да, по нему можно пройти! Если вы осмелитесь, разумеется</p>
             </div>
-            <div class="advantages-photo2-wrap">
+            <div class="advantages-photo-wrap">
               <img class="advantages-item-photo2" src="img/adv-photo2.jpg" width="800" height="385" alt="Sedona city">
             </div>
           </li>
@@ -129,16 +129,16 @@
         </li>
       </ul>
       <!--WANT TO GO container n SEARCH HOTEL BUTTON-->
-      <section class="want-to-go">
+      <section class="want-to-go" data-test="search">
         <div class="want-to-go-container">
           <h2 class="want-to-go-title">Заинтересовались?</h2>
           <p class="want-to-go-description">Укажите предполагаемые даты поездки,
             <br> и мы покажем вам лучшие предложения гостиниц в Седоне</p>
-          <button class="search-hotel-btn">Поиск гостиницы в Седоне</button>
+          <button class="search-hotel-btn js-modal" data-modal="#modal" href="#modal">Поиск гостиницы в Седоне</button>
         </div>
       </section>
       <!-- SUBSCRIBE-->
-      <section class="subscribe subscribe-theme">
+      <section class="subscribe subscribe-theme" data-test="subscribe">
         <h2 class="subscribe-title">Подпишитесь на рассылку</h2>
         <p class="subscribe-description">Только полезная информация и никакого спама, <br>
           честное бойскаутское!</p>
@@ -148,8 +148,9 @@
           <input class="subscribe-mail-button" type="submit" value="Подписаться">
         </form>
       </section>
+    </main>
       <!--FOOTER-->
-      <footer class="footer">
+      <footer class="footer" data-test="footer">
         <div class="footer-container">
           <h2 class="visually-hidden">Контактная информация</h2>
           <div class="footer-social-link">
@@ -201,8 +202,6 @@
           </div>
         </div>
       </footer>
-    </div>
-  </main>
 
   <!-- MODAL WINDOW -->
   <div id="modal" class="modal-window">
@@ -211,46 +210,45 @@
         <h2 class="modal-window-title">Поиск гостиницы в Седоне</h2>
         <a href="#" class="modal-close">
           <span class="visually-hidden">Закрыть</span>
-          <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="modal-close-button" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.4905 4.78288L16.1982 3.49057L10.4905 9.19826L4.78279 3.49057L3.49048 4.78288L9.19817 10.4906L3.49048 16.1983L4.78279 17.4906L10.4905 11.7829L16.1982 17.4906L17.4905 16.1983L11.7828 10.4906L17.4905 4.78288Z" fill="black"/>
           </svg>
         </a>
       </div>
-      <form class="modal-arrival-departure" action="https://echo.htmlacademy.ru/" method="post">
-        <label class="modal-arrival-date">
-          <h4 class="modal-h4">
+      <form class="modal-date-form" action="https://echo.htmlacademy.ru/" method="post">
+        <label class="modal-label-date">
+          <span class="modal-h4">
             Дата заезда:
-          </h4>
-          <input class="field modal-check-in" type="text" id="check-in" name="check-in" value="27 апреля 2020" required="">
+          </span>
+          <input class="field" type="text" placeholder="Укажите дату" id="check-in" name="check-in" value="27 апреля 2020" required="">
         </label>
         <span class="date-details error">
           Мы не можем отправить вас в прошлое.
         </span>
-        <label class="modal-departure-date">
-          <h4 class="modal-h4">
+        <label class="modal-label-date">
+          <span class="modal-h4">
             Дата выезда:
-          </h4>
-          <input class="field modal-check-out" type="text" id="check-out" name="check-out" value="1 сентября 2023" required="">
+          </span>
+          <input class="field" type="text" placeholder="Укажите дату" id="check-out" name="check-out" value="1 сентября 2023" required="">
         </label>
         <span class="date-details">
           На эти даты есть свободные номера. Пока есть.
         </span>
-      </form>
       <!-- MODAL select amount -->
       <div class="modal-people-amount">
         <label class="modal-adult">
-          <h4 class="modal-h4">
+          <span class="modal-h4">
               Взрослые:
-            </h4>
+          </span>
           <div class="select-amount-btn">
-            <button class="button-minus">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <button class="button-minus" id="minus-btn" type="button">
+              <svg class="minus-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M3 9V11H17V9H3Z" fill="#756157" fill-opacity="0.3" />
               </svg>
             </button>
             <input type="text" value="2" size="2" class="modal-input-quantity" data-max-count="8">
-            <button class="button-plus">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <button class="button-plus" id="plus-btn" type="button">
+              <svg class="plus-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z" fill="#756157" fill-opacity="0.3" />
               </svg>
             </button>
@@ -258,18 +256,18 @@
         </label>
 
       <label class="modal-children">
-        <h4 class="modal-h4">
+        <span class="modal-h4">
               Дети:
-            </h4>
+        </span>
         <div class="select-amount-btn">
-          <button class="button-minus">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <button class="button-minus" id="minus-btn" type="button">
+            <svg class="minus-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M3 9V11H17V9H3Z" fill="#756157" fill-opacity="0.3" />
             </svg>
           </button>
           <input type="text" value="2" size="2" class="modal-input-quantity" data-max-count="8">
-          <button class="button-plus">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <button class="button-plus" id="plus-btn" type="button">
+            <svg class="plus-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z" fill="#756157" fill-opacity="0.3" />
             </svg>
           </button>
@@ -280,10 +278,10 @@
               <circle cx="13" cy="13" r="13" fill="#83B3D3"/>
               <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7H14V9H12V7ZM14 19H12V10H14V19Z" fill="white"/>
             </svg>
+          </button>
             <span class="tooltip-text" role="tooltip">
               Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.
             </span>
-          </button>
     </span>
       </label>
       </div>
@@ -292,6 +290,7 @@
         Найти
       </button>
     </div>
+  </form>
   </div>
   </div>
   <div class="modal-window__backdrop hidden" id="modal-backdrop"></div>
