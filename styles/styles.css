@@ -25,7 +25,7 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  font-family: 'PT Sans';
+  font-family: 'PT Sans', sans-serif;
   background-color: #ffffff;
   font-size: 18px;
   line-height: 21px;
@@ -188,6 +188,7 @@ body {
   background: url(../img/bg-divider.svg) bottom, url(../img/welcome-background.jpg) center;
   background-repeat: no-repeat;
   background-position: bottom;
+  background-color: rgba(131, 179, 211, 0.5);
   display: flex;
   flex-direction: column;
   min-height: 485px;
@@ -420,8 +421,10 @@ body {
   line-height: 36px;
   color: #ffffff;
   text-transform: uppercase;
-  padding: 8px 50px;
+  padding: 8px 0;
   cursor: pointer;
+  text-decoration: none;
+  max-width: 376px;
 }
 
 /* SUBSCRIBE */
@@ -434,6 +437,7 @@ body {
   padding: 96px 258px 104px;
   text-align: center;
   color: #000000;
+  margin-top: 60px;
 }
 .subscribe-theme {
   color: #ffffff;
@@ -567,7 +571,7 @@ body {
   background: url("../img/filter-background.svg");
   background-size: cover;
   background-color: #84AFCD;
-  padding: 35px 70px 70px;
+  padding: 35px 70px 71px;
 }
 
 .breadcrumbs-wrapper {
@@ -620,17 +624,21 @@ body {
   background-position: center;
   width: 8px;
   height: 11px;
-  padding: 5px 0;
+  padding: 4px 3px;
   right: -19px;
 
 }
 
 .breadcrumbs-item:not(:first-child) {
-  margin-left: 30px;
+  margin-left: 27px;
 }
 
 .breadcrumbs-item:last-child .breadcrumbs-link:after {
   display: none;
+}
+
+.breadcrumbs-home-svg {
+  padding: 0 1px 2px;
 }
 
 /* FORM/SELECTION FORM*/
@@ -711,7 +719,7 @@ body {
 .control-input[type="radio"]:checked {
   background-image: url(../img/round-tick.svg);
   background-repeat: no-repeat;
-  background-position: center top 0;
+  background-position: center;
 }
 
 .control-input:checked:hover,
@@ -895,7 +903,7 @@ body {
 /* SEARCHING HOTELS FILTER/CONTAINER */
 
 .searching-hotels-container {
-  margin: 50px 70px 60px;
+  margin: 48px 70px 0;
 }
 
 .searching-filter-header {
@@ -918,8 +926,7 @@ body {
   display: flex;
   align-items: center;
   width: 292px;
-  margin-left: auto;
-  margin-right: 70px;
+  margin: 0 71px 0 auto;
 }
 
 .searching-option {
