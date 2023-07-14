@@ -344,7 +344,14 @@ body {
   width: 230px;
   display: flex;
   flex-direction: column;
-  padding: 109px 85px 87px;
+  padding: 114px 85px;
+}
+
+.advantages-container-wide.advantages-item-container {
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+  padding: 103px 85px;
 }
 
 .advantages-item-wide {
