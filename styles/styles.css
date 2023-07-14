@@ -1328,14 +1328,6 @@ body {
   background: #F2F2F2;
 }
 
-.tooltip-btn {
-  background: none;
-  border: none;
-  top: -15px;
-  left: 52px;
-  position: absolute;
-}
-
 .modal-input-quantity {
   color: #000000;
   text-align: center;
@@ -1405,24 +1397,31 @@ body {
   position: absolute;
 }
 
+.tooltip-btn {
+  background: none;
+  border: none;
+  top: 9px;
+  left: 52px;
+  position: absolute;
+}
+
 .tooltip-text {
   color: #ffffff;
   font-family: 'PT Sans';
   font-size: 16px;
   line-height: 20px;
   background: #333333;
-  padding: 18px 18px 22px 23px;
+  padding: 18px 18px 23px 22px;
   display: none;
   width: 256px;
   box-sizing: border-box;
   border-radius: 10px;
   margin-top: 15px;
   text-align: initial;
-  top: 15px;
-  left: -56px;
+  top: 38px;
+  left: -57px;
   position: absolute;
 }
-
 
 .tooltip-text::before {
   border-left: solid transparent 10px;
@@ -1433,7 +1432,7 @@ body {
   margin-left: -10px;
   position: absolute;
   height: 9px;
-  top: -16px;
+  top: -18px;
 }
 
 .tooltip-btn:hover + .tooltip-text {
