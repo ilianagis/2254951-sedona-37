@@ -132,7 +132,7 @@ body {
 }
 
 .btn-search {
-  background: url(../img/search.svg);
+  background: url("../img/search.svg");
   background-repeat: no-repeat;
   background-position: center;
   width: 20px;
@@ -142,7 +142,7 @@ body {
 }
 
 .btn-favourite {
-  background: url(../img/fav.svg);
+  background: url("../img/fav.svg");
   background-repeat: no-repeat;
   background-position: center;
   width: 20px;
@@ -185,7 +185,7 @@ body {
 /* HERO */
 
 .hero {
-  background: url(../img/bg-divider.svg) bottom, url(../img/welcome-background.jpg) center;
+  background: url("../img/bg-divider.svg") bottom, url("../img/welcome-background.jpg") center;
   background-repeat: no-repeat;
   background-position: bottom;
   background-color: rgba(131, 179, 211, 0.5);
@@ -626,7 +626,7 @@ body {
   display: inline-block;
   position: absolute;
   content: "";
-  background-image: url(../img/breadcrumbs-indicator.svg);
+  background-image: url("../img/breadcrumbs-indicator.svg");
   background-repeat: no-repeat;
   background-position: center;
   width: 8px;
@@ -724,7 +724,7 @@ body {
 }
 
 .control-input[type="radio"]:checked {
-  background-image: url(../img/round-tick.svg);
+  background-image: url("../img/round-tick.svg");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -937,7 +937,7 @@ body {
 }
 
 .searching-option {
-  background-image: url(../img/select-arrow.svg);
+  background-image: url("../img/select-arrow.svg");
   background-repeat: no-repeat;
   background-position: center right 14px;
   padding: 14px 35px 14px 20px;
@@ -969,7 +969,7 @@ body {
 
 .view-button {
   border-radius: 4px;
-  border: 2px solid var(--forms-elements-1, #E5E5E5);
+  border: 2px solid #E5E5E5;
   cursor: pointer;
   padding: 13px 14px;
   background: none;
@@ -1262,7 +1262,7 @@ body {
 }
 
 .modal-label-date input {
-  background: url(../img/modal-calendar-icon.svg) no-repeat;
+  background: url("../img/modal-calendar-icon.svg") no-repeat;
   background-position: 95%;
 }
 
