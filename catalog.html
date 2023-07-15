@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HTML Academy: Седона</title>
   <link rel="stylesheet" href="styles/styles.css">
-  <link rel="icon" href="img/favicon.png">
+  <link rel="icon" href="favicon.png">
   <link rel="icon" href="favicon.ico">
 </head>
 
@@ -15,18 +15,24 @@
   <!--HEADER-->
   <header class="page-header" data-test="header">
     <nav class="navigation">
-      <a href="index.html">
-        <img class="logo" src="img/logo.svg" alt="Логотип." width="140" height="70">
+      <a href="index.html" class="logo">
+        <img src="img/logo.svg" alt="Логотип." width="140" height="70">
       </a>
       <ul class="navigation-list">
         <li class="navigation-item">
-          <a class="navigation-link" href="index.html">Главная</a>
+          <a class="navigation-link" href="index.html">
+            <span>Главная</span>
+          </a>
         </li>
         <li class="navigation-item">
-          <a class="navigation-link" href="../#about">О седоне</a>
+          <a class="navigation-link" href="../#about">
+            <span>О седоне</span>
+          </a>
         </li>
         <li class="navigation-item">
-          <a class="navigation-link navigation-link-current" href="/catalog.html">Гостиницы</a>
+          <a class="navigation-link navigation-link-current" href="catalog.html">
+            <span>Гостиницы</span>
+          </a>
         </li>
       </ul>
       <ul class="navigation-list navigation-user">
@@ -62,7 +68,7 @@
           <li class="breadcrumbs-item">
             <a class="breadcrumbs-link" href="catalog.html">
                 Гостиницы
-              </a>
+            </a>
           </li>
         </ul>
       </section>
