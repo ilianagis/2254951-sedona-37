@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'PT Sans';
+  font-family: "PT Sans";
   font-weight: 400;
   src: url(../fonts/ptsans-400.woff2) format("woff2");
   font-style: normal;
@@ -7,7 +7,7 @@
 }
 
 @font-face {
-  font-family: 'PT Sans';
+  font-family: "PT Sans";
   font-weight: 700;
   src: url(../fonts/ptsans-700.woff2) format("woff2");
   font-style: normal;
@@ -25,7 +25,7 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  font-family: 'PT Sans', sans-serif;
+  font-family: "PT Sans", sans-serif;
   background-color: #ffffff;
   font-size: 18px;
   line-height: 21px;
@@ -82,6 +82,7 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
+  max-width: 550px;
 }
 
 .navigation-link {
@@ -111,25 +112,29 @@ body {
 
 .navigation-user {
   margin-left: auto;
-  display: flex;
-  flex-wrap: nowrap;
   align-items: start;
+  max-width: 176px;
 }
 
 .navigation-item-user {
   display: flex;
   align-items: center;
   text-decoration: none;
-
 }
 
-.navigation-button-search,
-.navigation-button-favourite {
-  margin: 20px 11px;
+.navigation-link:hover,
+.navigation-link:focus {
+  background: #82b3d3;
+  color: #ffffff;
 }
 
-.navigation-button-popup {
-  margin: 13px 0 0 20px;
+.navigation-link:active {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.navigation-link-user:hover,
+.navigation-item-user:focus {
+
 }
 
 .btn-search {
@@ -138,7 +143,8 @@ body {
   background-position: center;
   width: 20px;
   height: 20px;
-  padding: 1px 0px 0px 1px;
+  padding: 5px 0 0 1px;
+  margin: 20px 11px;
   cursor: pointer;
 }
 
@@ -150,10 +156,12 @@ body {
   height: 20px;
   padding: 2px 1px 1px 1px;
   cursor: pointer;
+  margin: 21px 11px;
 }
 
 .navigation-link-btn {
   font-weight: 700;
+  display: flex;
   font-size: 16px;
   line-height: 20px;
   text-decoration: none;
@@ -162,10 +170,13 @@ body {
   color: #ffffff;
   background-color: #756157;
   padding: 8px 34px;
+  margin: 13px 0 13px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  white-space: nowrap;
+  max-width: 165px;
+  word-break: break-word;
+  align-items: center;
 }
 
 .navigation-user-fav-element {
@@ -174,7 +185,7 @@ body {
   background: #7db54f;
   border-radius: 10px;
   font-size: 10px;
-  font-family: 'PT Sans';
+  font-family: "PT Sans", sans-serif;
   font-weight: 400;
   line-height: 10px;
   text-align: center;
@@ -208,18 +219,14 @@ body {
   flex-grow: 1;
 }
 .about-sedona {
-  display: flex;
-  flex-wrap: wrap;
-  color: #000000;
   padding: 69px 0;
   align-items: center;
   justify-content: center;
-  margin-bottom: 21px;
 }
 
 .about-sedona-title,
-.come-to-sedona-title,
-.want-to-go-title,
+.service-h2,
+.search-title,
 .subscribe-title,
 .subscribe-title-catalog {
   padding: 0;
@@ -233,19 +240,19 @@ body {
 }
 
 .about-sedona-title {
-  margin-bottom: 25px;
+  margin: 69px 158px 25px 158px;
 }
 
-.come-to-sedona-title,
-.want-to-go-title,
+.service-title,
+.search-title,
 .subscribe-title,
 .subscribe-title-catalog {
   margin-bottom: 20px;
 }
 
 .about-sedona-description,
-.come-to-sedona-description,
-.want-to-go-description,
+.service-p,
+.search-description,
 .subscribe-description,
 .subscribe-description-catalog {
   font-size: 22px;
@@ -256,7 +263,11 @@ body {
   margin: 0;
 }
 
-.want-to-go-description,
+.about-sedona-description {
+  margin: 0 150px 69px 150px;
+}
+
+.search-description,
 .subscribe-description,
 .subscribe-description-catalog {
   margin-bottom: 54px;
@@ -268,30 +279,6 @@ body {
   margin-bottom: 0;
 }
 
-.come-to-sedona {
-  display: flex;
-  flex-direction: column;
-  color: #000000;
-  padding: 64px 0;
-  align-items: center;
-  justify-content: center;
-}
-
-.want-to-go {
-  display: flex;
-  flex-direction: column;
-  color: #000000;
-  align-items: center;
-  justify-content: center;
-}
-
-.want-to-go-container {
-  padding: 96px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 /* ADVANTAGES */
 
 .advantages-list {
@@ -299,11 +286,12 @@ body {
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
+  padding-top: 21px;
   list-style-type: none;
 }
 
 .advantages-title,
-.advantages-title-2 {
+.service-title {
   font-weight: 700;
   margin: 0;
   font-size: 24px;
@@ -358,6 +346,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 103px 85px;
+  position: relative;
 }
 
 .advantages-item-wide {
@@ -376,50 +365,78 @@ body {
   background: rgba(255, 255, 255, 0.30);
 }
 
-.advantages-item-photo1 {
+.sedona.advantages-item-photo {
   position: absolute;
   height: 100%;
+  left: 100%;
+  top: 0%;
 }
 
-.advantages-photo-wrap {
-  position: relative;
-  width: 800px;
-  overflow: hidden;
-}
-
-.advantages-item-photo2 {
+.canyon.advantages-item-photo {
   position: absolute;
-  left: 50%;
+  right: 0%;
   transform: translate(-50%, -50%);
   top: 50%;
   height: 100%;
 }
 
-/* COME TO SEDONA ADVANTAGES LIST 2 */
+/* SERVICE */
 
-.advantages-list-2 {
+.service {
+  display: flex;
+  flex-direction: column;
+  color: #000000;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-h2 {
+  margin: 64px 0 20px 0;
+  max-width: 515px;
+}
+
+.service-p {
+  margin: 0 0 64px 0;
+  max-width: 750px;
+}
+
+.service-list {
   display: flex;
   list-style: none;
   padding-left: 0;
   margin: 0;
 }
 
+.service-description {
+  margin-top: 30px;
+  margin-bottom: 0;
+}
 
-.advantages-item-2 {
+.service-item {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   align-items: center;
   padding: 80px 85px;
   width: 230px;
 }
 
 
-.advantage-icon {
+.service-icon {
   margin-bottom: 30px;
 }
 
-/* SEARCH HOTEL BUTTON */
+/* SEARCH */
+
+.search {
+  display: flex;
+  flex-direction: column;
+  color: #000000;
+  align-items: center;
+  justify-content: center;
+  padding: 96px 304px;
+}
 
 .search-hotel-btn {
   display: flex;
@@ -427,7 +444,7 @@ body {
   margin: 0 auto;
   border: none;
   border-radius: 4px;
-  font-family: 'PT Sans';
+  font-family: "PT Sans", sans-serif;
   font-weight: 700;
   font-size: 20px;
   background-color: #756157;
@@ -455,7 +472,7 @@ body {
 .subscribe-theme {
   color: #ffffff;
   background-color: #8daab8;
-  background-image: url("../img/subscribe-bg.svg");
+  background-image: url("../img/subscribe-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -474,7 +491,7 @@ body {
 }
 
 .subscribe-mail-email {
-  font-family: 'PT Sans';
+  font-family: "PT Sans", sans-serif;
   background-color: #f2f2f2;
   border: none;
   border-radius: 4px 0 0 4px;
@@ -487,7 +504,7 @@ body {
 }
 
 .subscribe-mail-button {
-  font-family: 'PT Sans', sans-serif;
+  font-family: "PT Sans", sans-serif;
   font-size: 20px;
   font-weight: 700;
   line-height: 36px;
@@ -504,22 +521,10 @@ body {
 
 .footer {
   display: flex;
-  width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-container {
-  display: flex;
-  width: 1060px;
-  margin: 36px 70px 30px;
-}
-
-.footer-social-link {
-  display: flex;
-  width: 100%;
+  padding: 36px 70px 30px;
   align-items: center;
-
 }
+
 .footer-social-item {
   padding: 12px 12px;
 }
@@ -531,6 +536,8 @@ body {
   margin: 5px 0;
   margin-right: auto;
   list-style: none;
+  flex-wrap: wrap;
+  width: 144px;
 }
 
 .social-link:hover path,
@@ -567,8 +574,14 @@ body {
   text-align: center;
   text-transform: uppercase;
   color: #000000;
-  margin-right: auto;
   text-decoration: none;
+  padding: 5px 195px;
+  min-width: 335px;
+}
+
+.html-academy {
+  width: 115px;
+  margin-left: auto;
 }
 
 
@@ -579,7 +592,7 @@ body {
   flex-direction: column;
   color: #ffffff;
   box-sizing: border-box;
-  background: url("../img/filter-background.svg");
+  background: url("../img/filter-background.jpg");
   background-size: cover;
   background-color: #84afcd;
   padding: 35px 70px 71px;
@@ -652,11 +665,7 @@ body {
   padding: 0 2px 1px;
 }
 
-/* FORM/SELECTION FORM*/
-
-.filter-wrapper {
-  display: flex;
-}
+/* FORM */
 
 .selection-form {
   display: flex;
@@ -830,7 +839,6 @@ body {
   height: 4px;
   background-color: rgba(255, 255, 255, 0.3);
   width: 287px;
-  height: 4px;
 }
 
 .range-bar {
@@ -876,7 +884,7 @@ body {
 .submit-button,
 .reset-button {
   padding: 8px 50px;
-  font-family: 'PT Sans';
+  font-family: "PT Sans", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -1051,7 +1059,7 @@ body {
 .hotel-card-fav {
   text-decoration: none;
   font-size: 16px;
-  font-family: 'PT Sans';
+  font-family: "PT Sans", sans-serif;
   font-weight: 700;
   line-height: 20px;
   text-transform: uppercase;
@@ -1315,7 +1323,7 @@ body {
 .modal-search-btn {
   color: #ffffff;
   text-align: center;
-  font-family: 'PT Sans';
+  font-family: "PT Sans", sans-serif;
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
@@ -1347,7 +1355,7 @@ body {
 .modal-input-quantity {
   color: #000000;
   text-align: center;
-  font-family: 'PT Sans';
+  font-family: "PT Sans", sans-serif;
   font-size: 18px;
   font-weight: 700;
   line-height: 20px;
@@ -1416,14 +1424,14 @@ body {
 .tooltip-btn {
   background: none;
   border: none;
-  top: 9px;
+  top: -15px;
   left: 52px;
   position: absolute;
 }
 
 .tooltip-text {
   color: #ffffff;
-  font-family: 'PT Sans';
+  font-family: "PT Sans", sans-serif;
   font-size: 16px;
   line-height: 20px;
   background: #333333;
@@ -1434,7 +1442,7 @@ body {
   border-radius: 10px;
   margin-top: 15px;
   text-align: initial;
-  top: 38px;
+  top: 14px;
   left: -57px;
   position: absolute;
 }
