@@ -132,31 +132,20 @@ body {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.navigation-link-user:hover,
-.navigation-item-user:focus {
-
+.navigation-link-user:hover path,
+.navigation-link-user:focus path {
+  fill: #68a2ca;
 }
 
-.btn-search {
-  background: url("../img/search.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 20px;
-  height: 20px;
-  padding: 5px 0 0 1px;
-  margin: 20px 11px;
-  cursor: pointer;
+.navigation-link-user:active path {
+  fill: rgba(104, 162, 202, 0.3);
 }
 
+
+.btn-search,
 .btn-favourite {
-  background: url("../img/fav.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 20px;
-  height: 20px;
-  padding: 2px 1px 1px 1px;
   cursor: pointer;
-  margin: 21px 11px;
+  height: 64px;
 }
 
 .navigation-link-btn {
@@ -170,7 +159,7 @@ body {
   color: #ffffff;
   background-color: #756157;
   padding: 8px 34px;
-  margin: 13px 0 13px 20px;
+  margin: 15px 0 13px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -189,9 +178,9 @@ body {
   font-weight: 400;
   line-height: 10px;
   text-align: center;
-  padding: 5px 4px;
+  padding: 5px 3px;
   top: 11px;
-  margin-left: 8px;
+  margin-left: 21px;
 }
 
 /* HERO */
@@ -648,9 +637,8 @@ body {
   background-position: center;
   width: 8px;
   height: 11px;
-  padding: 4px 3px;
+  padding: 5px 2px;
   right: -19px;
-
 }
 
 .breadcrumbs-item:not(:first-child) {
@@ -710,6 +698,14 @@ body {
   gap: 16px;
 }
 
+.checkbox-container:hover {
+  opacity: 0.6;
+}
+
+.checkbox-container:active {
+  opacity: 0.3;
+}
+
 .control-input[type="checkbox"] {
   background-color: #ffffff;
   border-radius: 4px;
@@ -740,16 +736,6 @@ body {
   background-image: url("../img/round-tick.svg");
   background-repeat: no-repeat;
   background-position: center;
-}
-
-.control-input:checked:hover,
-.control-input:hover {
-  background-color: rgba(255, 255, 255, 0.6);
-}
-
-.control-input:checked:active,
-.control-input:active {
-  background-color: rgba(255, 255, 255, 0.3);
 }
 
 /* COST FILTER */
@@ -896,26 +882,53 @@ body {
   cursor: pointer;
 }
 
+.reset-button:hover {
+  opacity: 0.6;
+}
+
 .reset-button:active {
-  color: rgba(255, 255, 255, 0.3);
+  opacity: 0.3;
+}
+
+.reset-button:disabled {
+  opacity: 0.1;
 }
 
 .submit-button {
   background: #82b3d3;
 }
 
-.submit-button:hover,
-.submit-button:focus {
+.reset-button {
+  background: none;
+}
+
+/* blue/brown buttons */
+
+.blue-btn:hover,
+.blue-btn:focus {
   background-color: #68a2ca;
 }
 
-.submit-button:active {
+.blue-btn:active {
   background-color: #82b3d3;
   color: rgba(255, 255, 255, 0.3);
 }
 
-.reset-button {
-  background: none;
+.brown-btn:hover,
+.brown-btn:focus {
+  background-color: #615048;
+}
+
+.brown-btn:active {
+  background-color: #756157;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.blue-button:disabled,
+.brown-btn:disabled,
+.favourite.hotel-card-fav:disabled {
+  background-color: #E5E5E5;
+  color: rgba(255, 255, 255, 0.3)
 }
 
 /* SEARCHING HOTELS FILTER/CONTAINER */
@@ -1015,11 +1028,16 @@ body {
   border-radius: 4px;
 }
 
-.hotel-card-link:active,
-.hotel-card-link:hover,
 .hotel-card-link {
   text-decoration: none;
   color: #333333;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.hotel-card-link img:hover {
+  transform: scale(1.1);
+  transition: 1s;
 }
 
 .hotel-card-img {
@@ -1072,19 +1090,6 @@ body {
   padding: 8px 27px;
 }
 
-.hotel-card-about:hover,
-.hotel-card-about:focus,
-.search-hotel-btn:hover,
-.search-hotel-btn:focus {
-  background-color: #615048;
-}
-
-.hotel-card-about:active,
-.search-hotel-btn:active {
-  background-color: #756157;
-  color: rgba(255, 255, 255, 0.3);
-}
-
 .hotel-card-button:disabled,
 .search-hotel-btn:disabled {
   background-color: #e5e5e5;
@@ -1100,16 +1105,6 @@ body {
   border: none;
   padding: 8px 21px;
   cursor: pointer;
-}
-
-.hotel-card-fav:hover,
-.hotel-card-fav:focus {
-  background-color: #68a2ca;
-}
-
-.hotel-card-fav:active {
-  background-color: #82b3d3;
-  color: rgba(255, 255, 255, 0.3);
 }
 
 .favourite.hotel-card-fav {
@@ -1190,15 +1185,6 @@ body {
   color: #000000;
 }
 
-.pagination-link:hover,
-.pagination-link:focus {
-  background-color: #68a2ca;
-}
-
-.pagination-link:active {
-  background-color: #82b3d3;
-}
-
 .pagination-link-more {
   color: #000000;
   background: none;
@@ -1272,6 +1258,10 @@ body {
 .modal-close:focus,
 .modal-close:active {
   background-color: #e6e6e6;
+}
+
+.modal-close:active {
+  opacity: 0.3;
 }
 
 .select-amount-btn {
@@ -1381,6 +1371,7 @@ body {
   margin: 4px 0 23px 157px;
   font-size: 16px;
   color: #000000;
+  pointer-events: none;
 }
 
 .error {
@@ -1425,8 +1416,11 @@ body {
   background: none;
   border: none;
   top: -15px;
-  left: 52px;
+  left: 57px;
   position: absolute;
+  padding: 0;
+  height: 26px;
+  width: 26px;
 }
 
 .tooltip-text {
