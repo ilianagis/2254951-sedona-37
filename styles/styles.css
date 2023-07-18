@@ -492,6 +492,11 @@ body {
   color: #000000;
 }
 
+.subscribe-mail-email:hover,
+.subscribe-mail-email:focus {
+  background-color: #e6e6e6;
+}
+
 .subscribe-mail-button {
   font-family: "PT Sans", sans-serif;
   font-size: 20px;
@@ -987,7 +992,6 @@ body {
 
 .view-buttons {
   display: flex;
-  flex-wrap: wrap;
   gap: 8px;
 }
 
