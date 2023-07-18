@@ -701,6 +701,8 @@ body {
   font-weight: 400;
   line-height: 23px;
   gap: 16px;
+  max-width: 170px;
+  word-break: break-word;
 }
 
 .checkbox-container:hover {
@@ -709,6 +711,10 @@ body {
 
 .checkbox-container:active {
   opacity: 0.3;
+}
+
+.control-input {
+  min-width: 20px;
 }
 
 .control-input[type="checkbox"] {
@@ -850,7 +856,7 @@ body {
 }
 
 .range-toggle:active {
-  outline: #83b3d3;
+  outline: 2px solid #83b3d3;
 }
 
 .toggle-min {
@@ -1039,9 +1045,16 @@ body {
   overflow: hidden;
 }
 
-.hotel-card-link img:hover {
-  transform: scale(1.1);
-  transition: 1s;
+.hotel-card-link:hover,
+.hotel-card-link:focus {
+  color: #615048;
+  text-shadow: 0 1px 1px rgba(97,80,72,0.8);
+}
+
+.hotel-card-link:active {
+  color: #615048;
+  text-shadow: 0 1px 1px rgba(97,80,72,0.8);
+  opacity: 0.8;
 }
 
 .hotel-card-img {
@@ -1129,6 +1142,24 @@ body {
 .hotel-card-star-rating {
   display: flex;
   justify-content: space-between;
+}
+
+.stars {
+  background-image: url("../img/rating-star.svg");
+  background-size: 18px 37px;
+  background-repeat: space;
+}
+
+.two.stars {
+  width: 42px;
+}
+
+.three.stars {
+  width: 66px;
+}
+
+.four.stars {
+  width: 89px;
 }
 
 .rating {
@@ -1249,11 +1280,12 @@ body {
 
 .modal-close {
   position: absolute;
-  top: 66px;
-  right: 51px;
-  width: 21px;
-  height: 21px;
+  top: 64px;
+  right: 52px;
+  width: 52px;
+  height: 52px;
   padding: 16px 15px 15px 16px;
+  border: none;
   border-radius: 50%;
   background-color: #f2f2f2;
 }
@@ -1402,14 +1434,22 @@ body {
 }
 
 .modal-adult {
-  display: flex;
   gap: 46px;
 }
 
 .modal-children {
-  display: flex;
   gap: 82px;
   position: relative;
+}
+
+.adult-wrapper {
+  display: flex;
+  gap: 46px;
+}
+
+.children-wrapper {
+  display: flex;
+  gap: 82px;
 }
 
 .modal-children-tooltip {
@@ -1419,8 +1459,8 @@ body {
 .tooltip-btn {
   background: none;
   border: none;
-  top: -15px;
-  left: 57px;
+  top: 11px;
+  left: 59px;
   position: absolute;
   padding: 0;
   height: 26px;
@@ -1440,8 +1480,8 @@ body {
   border-radius: 10px;
   margin-top: 15px;
   text-align: initial;
-  top: 14px;
-  left: -57px;
+  top: 37px;
+  left: -56px;
   position: absolute;
 }
 

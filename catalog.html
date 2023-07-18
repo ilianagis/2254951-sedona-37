@@ -192,7 +192,7 @@
               <button class="hotel-card-fav blue-btn">В ИЗБРАННОЕ</button>
             </div>
             <div class="hotel-card-star-rating">
-              <img class="star-rating" src="img/rating-star4.svg" width="140" height="37" alt="Четыре звезды.">
+              <span class="stars four" aria-label="Четыре звезды"></span>
               <span class="rating">РЕЙТИНГ: 8,5</span>
             </div>
           </li>
@@ -210,7 +210,7 @@
               <button class="hotel-card-button hotel-card-fav favourite">В ИЗБРАННОМ</button>
             </div>
             <div class="hotel-card-star-rating">
-              <img class="star-rating" src="img/rating-star4.svg" width="140" height="37" alt="Четыре звезды.">
+              <span class="stars four" aria-label="Четыре звезды"></span>
               <span class="rating">РЕЙТИНГ: 9,2</span>
             </div>
           </li>
@@ -228,7 +228,7 @@
               <button class="hotel-card-button hotel-card-fav blue-btn">В ИЗБРАННОЕ</button>
             </div>
             <div class="hotel-card-star-rating">
-              <img class="star-rating" src="img/rating-star3.svg" width="140" height="37" alt="Три звезды.">
+              <span class="stars three" aria-label="Три звезды"></span>
               <span class="rating">РЕЙТИНГ: 6,9</span>
             </div>
           </li>
@@ -246,7 +246,7 @@
               <button class="hotel-card-button hotel-card-fav blue-btn">В ИЗБРАННОЕ</button>
             </div>
             <div class="hotel-card-star-rating">
-              <img class="star-rating" src="img/rating-star.svg" width="18" height="37" alt="Две звезды.">
+              <span class="stars two" aria-label="Две звезды"></span>
               <span class="rating">РЕЙТИНГ: 5,0</span>
             </div>
           </li>
@@ -344,12 +344,12 @@
     <div class="modal-window-container">
       <div class="modal-window-header">
         <h2 class="modal-window-title">Поиск гостиницы в Седоне</h2>
-        <a href="#" class="modal-close">
+        <button class="modal-close" type="button">
           <span class="visually-hidden">Закрыть.</span>
           <svg class="modal-close-button" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.4905 4.78288L16.1982 3.49057L10.4905 9.19826L4.78279 3.49057L3.49048 4.78288L9.19817 10.4906L3.49048 16.1983L4.78279 17.4906L10.4905 11.7829L16.1982 17.4906L17.4905 16.1983L11.7828 10.4906L17.4905 4.78288Z" fill="black" />
           </svg>
-        </a>
+        </button>
       </div>
       <form class="modal-date-form" action="https://echo.htmlacademy.ru/" method="post">
         <label class="modal-label-date">
@@ -372,58 +372,58 @@
         </span>
         <!-- MODAL select amount -->
         <div class="modal-people-amount">
-          <label class="modal-adult">
-            <span class="modal-h4">
-              Взрослые:
-            </span>
+        <div class="adult-wrapper">
+          <label class="modal-adult" for="adult">
+            <span class="modal-h4">Взрослые:</span>
           </label>
-            <div class="select-amount-btn">
-              <button class="button-minus" type="button">
-                <svg class="minus-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 9V11H17V9H3Z" fill="#756157" fill-opacity="0.3" />
-                </svg>
-                <span class="visually-hidden">Кнопка минус.</span>
-              </button>
-              <input type="text" value="2" size="2" class="modal-input-quantity" data-max-count="8">
-              <button class="button-plus" type="button">
-                <svg class="plus-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z" fill="#756157" fill-opacity="0.3" />
-                </svg>
-                <span class="visually-hidden">Кнопка плюс.</span>
-              </button>
-            </div>
-          <label class="modal-children">
-            <span class="modal-h4">
-              Дети:
-            </span>
-            <div class="select-amount-btn">
-              <button class="button-minus" type="button">
-                <svg class="minus-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 9V11H17V9H3Z" fill="#756157" fill-opacity="0.3" />
-                </svg>
-                <span class="visually-hidden">Кнопка минус.</span>
-              </button>
-              <input type="text" value="2" size="2" class="modal-input-quantity" data-max-count="8">
-              <button class="button-plus" type="button">
-                <svg class="plus-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z" fill="#756157" fill-opacity="0.3" />
-                </svg>
-                <span class="visually-hidden">Кнопка плюс.</span>
-              </button>
-            </div>
-            <span class="modal-children-tooltip">
+          <div class="select-amount-btn">
+            <button class="button-minus" type="button">
+              <svg class="minus-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 9V11H17V9H3Z" fill="#756157" fill-opacity="0.3" />
+              </svg>
+              <span class="visually-hidden">Кнопка минус.</span>
+            </button>
+            <input id="adult" name="adult" type="text" value="2" size="2" class="modal-input-quantity" data-max-count="8" required>
+            <button class="button-plus" type="button">
+              <svg class="plus-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z" fill="#756157" fill-opacity="0.3" />
+              </svg>
+              <span class="visually-hidden">Кнопка плюс.</span>
+            </button>
+          </div>
+        </div>
+         <div class="children-wrapper">
+          <label class="modal-children" for="children">
+            <span class="modal-h4">Дети:</span>
+          </label>
+          <div class="select-amount-btn">
+            <button class="button-minus" type="button">
+              <svg class="minus-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 9V11H17V9H3Z" fill="#756157" fill-opacity="0.3" />
+              </svg>
+              <span class="visually-hidden">Кнопка минус.</span>
+            </button>
+            <input id="children" name="children" type="text" value="2" size="2" class="modal-input-quantity" data-max-count="6" required>
+            <button class="button-plus" type="button">
+              <svg class="plus-svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z" fill="#756157" fill-opacity="0.3" />
+              </svg>
+              <span class="visually-hidden">Кнопка плюс.</span>
+            </button>
+          </div>
+          <span class="modal-children-tooltip">
             <button class="tooltip-btn" type="button">
             <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="13" cy="13" r="13" fill="#83B3D3"/>
               <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7H14V9H12V7ZM14 19H12V10H14V19Z" fill="white"/>
             </svg>
             <span class="visually-hidden">больше информации</span>
-            </button>
+          </button>
             <span class="tooltip-text" role="tooltip">
               Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.
             </span>
-            </span>
-          </label>
+          </span>
+        </div>
         </div>
         <div class="modal-btn">
           <button class="modal-search-btn" type="submit">
